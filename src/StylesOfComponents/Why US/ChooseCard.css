@@ -1,0 +1,25 @@
+.cardhead span {
+  color: var(--blue-color);
+}
+@media (min-width: 768px) {
+  .ChooseCard {
+    max-width: 1152px;
+    width: 100%;
+    margin: 80px auto 120px;
+  }
+  .cardhead {
+    color: var(--Neutrals-neutral---800, #08080c);
+    font-size: 56px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px; /* 114.286% */
+    letter-spacing: -0.42px;
+    margin-bottom: 96px;
+  }
+  .cardarrange {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 80px;
+  }
+}

@@ -1,0 +1,41 @@
+.Navbar {
+  display: flex;
+  max-width: 1440px;
+  width: 100vw;
+  margin: auto;
+  padding: 17px 144px;
+  justify-content: space-between;
+  align-items: center;
+}
+.NavStack {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.Navbar p {
+  color: var(--Neutrals-neutral---700, #39393d);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 133.333% */
+  letter-spacing: 0.27px;
+}
+.Navbar button {
+  width: 172px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  background-color: white;
+  color: var(--Blue-blue---600, #0050b8);
+  border: 2px solid var(--Blue-blue---600, #0050b8);
+  gap: 8px;
+  color: var(--Blue-blue---600, #0050b8);
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 125% */
+  letter-spacing: 0.28px;
+}
+.ArrowImg {
+  margin-bottom: 0px;
+}
