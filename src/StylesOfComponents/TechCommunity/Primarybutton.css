@@ -1,0 +1,22 @@
+.primary-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    padding: 10px 12px;
+    background-color: #0050b8; /* Replaced var(--blueblue-600) */
+    border-radius: 6px;
+    color: #ffffff;
+    font-family: "Satoshi", Helvetica;
+    font-size: 16px; /* Replaced var(--p2-medium-font-size) */
+    font-weight: 500; /* Replaced var(--p2-medium-font-weight) */
+    letter-spacing: 0.28px; /* Replaced var(--p2-medium-letter-spacing) */
+    line-height: 20px; /* Replaced var(--p2-medium-line-height) */
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.primary-button:hover {
+    box-shadow: 0px 2px 16px rgba(0, 106, 245, 0.4), 0px 2px 4px rgba(0, 106, 245, 0.5);
+}
