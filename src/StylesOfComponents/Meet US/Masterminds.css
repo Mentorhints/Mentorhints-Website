@@ -1,0 +1,85 @@
+.Masterminds {
+  max-width: 1440px;
+  width: 100%;
+  padding: 48px 144px;
+  margin: auto;
+}
+.orangebox {
+  max-width: 1152px;
+  height: 628px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 233, 218, 0.78) -16.43%,
+    rgba(255, 255, 255, 0) 107.25%
+  );
+}
+.flexboxmh {
+  display: flex;
+}
+.highlightbox {
+  margin: 52px 96px 0px 48px;
+  display: flex;
+  height: fit-content;
+  width: 350px;
+  flex-direction: column;
+}
+.textofMentorship {
+  color: var(--Neutrals-neutral---800, #08080c);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: 0.245px;
+  width: 72px;
+}
+.highlightbox .frame {
+  margin-right: 250px;
+}
+.highlightbox h3 {
+  color: #08080c;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px; /* 120% */
+  letter-spacing: -0.4px;
+}
+.highlightbox p {
+  color: var(--Neutrals-neutral---600, #6a6a6b);
+  width: 343px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: 0.245px;
+}
+.benefitsofbullets {
+  display: flex;
+  margin-bottom: 40px;
+}
+.benefitsofmentors {
+  margin: 96px;
+}
+.benefitsofmentors .imgholder {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background-color: white;
+}
+.benefitsofbullets h5 {
+  margin-left: 24px;
+  color: #000;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 133.333% */
+  letter-spacing: -0.06px;
+}
+.btnformh {
+  width: 368px;
+  margin-top: -60px;
+}
