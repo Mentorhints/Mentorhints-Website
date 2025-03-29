@@ -36,6 +36,23 @@
   line-height: 20px; /* 125% */
   letter-spacing: 0.28px;
 }
-.ArrowImg {
-  margin-bottom: 0px;
+.ArrowImg,
+.hatgraduation {
+  margin-bottom: -5px;
+}
+
+.buttonsofnav {
+  display: flex;
+  gap: 16px;
+}
+.searchbar {
+  display: flex;
+  width: 220px;
+  height: 40px;
+  padding: 8px 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 24px;
+  background: var(--Neutrals-neutral---50, #f5f5f7);
+  box-shadow: 0px 1.004px 2.008px 0px rgba(0, 0, 0, 0.05);
 }
