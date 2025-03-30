@@ -1,0 +1,22 @@
+.secondary-button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    outline: 2px solid #0050b8;
+    outline-offset: -2px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent; /* Optional: Add if needed */
+    cursor: pointer; /* Add pointer cursor for better UX */
+  }
+  
+  .button-text {
+    color: #0050b8;
+    font-size: 16px;
+    font-family: "Satoshi", sans-serif;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.28px;
+    word-wrap: break-word;
+  }
