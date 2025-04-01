@@ -1,14 +1,13 @@
 .Masterminds {
   max-width: 1440px;
   width: 100%;
-  padding: 48px 144px;
+  padding: 61px 144px;
   margin: auto;
 }
 .orangebox {
   max-width: 1152px;
   display: flex;
   flex-direction: column;
-  height: 628px;
   margin: auto;
   border-radius: 8px;
   background: linear-gradient(
@@ -81,7 +80,7 @@
 .chat-container {
   max-width: 405px;
   width: 100%;
-  margin: 0px auto;
+  margin: 0px auto 70px;
 }
 .message {
   display: flex;
