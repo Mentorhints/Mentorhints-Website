@@ -11,21 +11,17 @@ import Footer from "./Components/FooterRedesign/FooterRedesign";
 import { ScreenSizeProvider } from "./ScreenSizeContext";
 const App = () => {
   return (
-    <ScreenSizeProvider>
-      <>
-        <Navbar />
-        <Home />
-        <MeetMentors />
-        <LiveCourses />
-        <TechCommunity />
-
-        <Masterminds />
-
-        <ChooseCard />
-        <SuccessStory />
-        <Footer />
-      </>
-    </ScreenSizeProvider>
+    <>
+      <Navbar />
+      <Home />
+      <MeetMentors />
+      <LiveCourses />
+      <Masterminds />
+      <TechCommunity />
+      <ChooseCard />
+      <SuccessStory />
+      <Footer />
+    </>
   );
 };
 
