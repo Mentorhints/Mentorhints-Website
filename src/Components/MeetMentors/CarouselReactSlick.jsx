@@ -28,9 +28,9 @@ const CarouselReactSlick = () => {
     beforeChange: (current, next) => setActiveIndex(next),
     responsive: [
       {
-        breakpoint: 480, // Mobile View
+        breakpoint: 550,
         settings: {
-          variableWidth: true, // If true, removes automatic width calculation
+          slidesToShow: 0.96,
         },
       },
     ],
@@ -46,9 +46,7 @@ const CarouselReactSlick = () => {
             return (
               <div
                 key={index}
-                className={`mentor-slide ${
-                  isDesktop ? (isCenter ? "active" : "blurred") : ""
-                }`}
+                className={`mentor-slide ${isCenter ? "active" : "blurred"}`}
               >
                 <MentorProfile {...item} />
               </div>

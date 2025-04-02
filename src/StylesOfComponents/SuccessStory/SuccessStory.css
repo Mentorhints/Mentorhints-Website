@@ -27,11 +27,12 @@
 @media (max-width: 550px) {
   .SuccessStory {
     max-width: 352px;
-    height: 758px;
     display: flex;
     padding: 40px 16px;
     align-items: flex-start;
     align-self: stretch;
+    overflow: auto;
+    gap: 32px;
   }
   .SuccessStory h2 {
     font-size: 32px;
@@ -40,7 +41,7 @@
   }
   .StudentSuccess {
     position: relative;
-    max-width: 350px;
+    max-width: 352px;
     width: 100%;
   }
 }

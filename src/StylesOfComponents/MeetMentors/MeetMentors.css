@@ -36,12 +36,13 @@
     padding: 16px;
     width: 100%;
     margin: auto;
+    overflow: hidden;
   }
   .CarouselBox {
     max-width: 352px;
     padding: 16px;
-    overflow-x: hidden;
   }
+
   .MentorhintsOffer {
     padding: 96px 16px 0px;
   }

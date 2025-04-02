@@ -15,7 +15,6 @@ const SuccessStory = () => {
     slidesToShow: 1,
     swipeToSlide: true,
     variableWidth: true,
-    centerPadding: "16px",
   };
 
   return (
@@ -23,13 +22,11 @@ const SuccessStory = () => {
       <h2>Student Success Stories</h2>
 
       {!isDesktop ? (
-        <div className="Divcorrect">
-          <Slider {...settings}>
-            {Feedback.map((itemF, index) => (
-              <SuccessStoryCard {...itemF} />
-            ))}
-          </Slider>
-        </div>
+        <Slider {...settings}>
+          {Feedback.map((itemF, index) => (
+            <SuccessStoryCard {...itemF} />
+          ))}
+        </Slider>
       ) : (
         <div className="StudentSuccess">
           {Feedback.map((itemF, index) => (

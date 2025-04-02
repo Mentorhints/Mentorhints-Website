@@ -12,15 +12,16 @@ import { ScreenSizeProvider } from "./ScreenSizeContext";
 const App = () => {
   return (
     <>
-      <Navbar />
-      <Home />
-      <MeetMentors />
-      <LiveCourses />
-      <Masterminds />
-      <TechCommunity />
-      <ChooseCard />
-      <SuccessStory />
-      <Footer />
+      <ScreenSizeProvider>
+        <Home />
+        <MeetMentors />
+        <LiveCourses />
+        <Masterminds />
+        <TechCommunity />
+        <ChooseCard />
+        <SuccessStory />
+        <Footer />
+      </ScreenSizeProvider>
     </>
   );
 };
