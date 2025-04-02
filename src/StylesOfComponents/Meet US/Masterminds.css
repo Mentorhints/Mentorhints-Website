@@ -115,3 +115,31 @@
   position: relative;
   top: 35px;
 }
+@media (max-width: 550px) {
+  .Masterminds {
+    max-width: 352px;
+    padding: 16px;
+  }
+  .orangebox {
+    max-width: 320px;
+    margin: 16px;
+  }
+  .highlightbox {
+    align-items: flex-start;
+    margin: 16px auto;
+  }
+  .highlightbox h3 {
+    font-size: 32px;
+  }
+  .highlightbox p {
+    width: 276px;
+  }
+  .chat-container {
+    max-width: 285px;
+    width: 100%;
+    margin: 0px auto 70px;
+  }
+  .message.bot {
+    margin-left: 0px;
+  }
+}

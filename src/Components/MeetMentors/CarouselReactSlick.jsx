@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext } from "react";
 import { MentorsList } from "./data.js";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -7,10 +7,11 @@ import MentorProfile from "./MentorProfile.jsx";
 import nextArrow from "../../assets/ArrowCircleRight.svg";
 import prevArrow from "../../assets/ArrowCircleLeft.svg";
 import "../../StylesOfComponents/MeetMentors/CarouselReactSlick.css";
-
+import { ScreenSizeContext } from "../../ScreenSizeContext.jsx";
 const CarouselReactSlick = () => {
   const sliderRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const { isDesktop } = useContext(ScreenSizeContext);
   const nextSlide = () => {
     sliderRef.current.slickNext();
   };
@@ -25,6 +26,14 @@ const CarouselReactSlick = () => {
     slidesToScroll: 1,
     arrows: false,
     beforeChange: (current, next) => setActiveIndex(next),
+    responsive: [
+      {
+        breakpoint: 480, // Mobile View
+        settings: {
+          variableWidth: true, // If true, removes automatic width calculation
+        },
+      },
+    ],
   };
   return (
     <>
@@ -37,7 +46,9 @@ const CarouselReactSlick = () => {
             return (
               <div
                 key={index}
-                className={`mentor-slide ${isCenter ? "active" : "blurred"}`}
+                className={`mentor-slide ${
+                  isDesktop ? (isCenter ? "active" : "blurred") : ""
+                }`}
               >
                 <MentorProfile {...item} />
               </div>

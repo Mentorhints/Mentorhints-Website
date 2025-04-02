@@ -1,3 +1,23 @@
+.ChooseCard {
+  max-width: 352px;
+  width: 100%;
+  margin: 0px auto;
+}
+.cardhead {
+  text-align: center;
+  font-size: 32px;
+  line-height: 40px; /* 125% */
+}
+
+.cardarrange {
+  display: flex;
+  padding: 40px 16px 60px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 60px;
+  align-self: stretch;
+}
+
 .cardhead span {
   color: var(--blue-color);
 }

@@ -30,3 +30,22 @@
 .MentorhintsOffer {
   padding: 96px 300px 0px;
 }
+@media (max-width: 550px) {
+  .MeetMentors {
+    max-width: 352px;
+    padding: 16px;
+    width: 100%;
+    margin: auto;
+  }
+  .CarouselBox {
+    max-width: 352px;
+    padding: 16px;
+    overflow-x: hidden;
+  }
+  .MentorhintsOffer {
+    padding: 96px 16px 0px;
+  }
+  .MeetMentors h3 {
+    font-size: 32px;
+  }
+}

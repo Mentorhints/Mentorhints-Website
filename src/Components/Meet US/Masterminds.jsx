@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import user from "../../assets/userImage.svg";
 import bot from "../../assets/MentorImage.svg";
 import ellipseorange from "../../assets/OrangeEllipse.svg";
 import "../../StylesOfComponents/Meet US/Masterminds.css";
+import { ScreenSizeContext } from "../../ScreenSizeContext.jsx";
 const Masterminds = () => {
+  const { isDesktop } = useContext(ScreenSizeContext);
+
   return (
     <div className="Masterminds">
       <div className="orangebox">
@@ -12,7 +15,11 @@ const Masterminds = () => {
             <img src={ellipseorange} alt="ellipse" />
             <p className="textofMentorship">Mentorship</p>
           </div>
-          <h3>Meet Masterminds & Crack Interviews</h3>
+          {isDesktop ? (
+            <h3>Meet Masterminds & Crack Interviews</h3>
+          ) : (
+            <h3>Meet Masterminds</h3>
+          )}
           <p>
             We connect you with people from leading companies who matches your
             skillset to help you crack interviews

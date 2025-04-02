@@ -21,3 +21,10 @@
 .slider-container {
   margin-top: 40px;
 }
+@media (max-width: 550px) {
+  .slick-list {
+    max-width: 100% !important; /* Prevents extra space */
+    height: 348px !important;
+    overflow: hidden; /* Ensures no extra space is shown */
+  }
+}

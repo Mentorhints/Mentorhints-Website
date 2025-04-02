@@ -24,3 +24,23 @@
   max-width: 1152px;
   width: 100%;
 }
+@media (max-width: 550px) {
+  .SuccessStory {
+    max-width: 352px;
+    height: 758px;
+    display: flex;
+    padding: 40px 16px;
+    align-items: flex-start;
+    align-self: stretch;
+  }
+  .SuccessStory h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px; /* 125% */
+  }
+  .StudentSuccess {
+    position: relative;
+    max-width: 350px;
+    width: 100%;
+  }
+}
