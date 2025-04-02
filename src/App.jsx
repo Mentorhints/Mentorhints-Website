@@ -1,4 +1,5 @@
 import React from "react";
+import { useState,useEffect } from "react";
 import ChooseCard from "./Components/Why US/ChooseCard";
 import SuccessStory from "./Components/SuccessStory/SuccessStory";
 import Navbar from "./Components/Navbar/Navbar";
@@ -8,11 +9,25 @@ import MeetMentors from "./Components/MeetMentors/MeetMentors";
 import Home from "./Components/Home/Home";
 import LiveCourses from "./Components/LiveCourses/LiveCourses"
 import Footer from "./Components/FooterRedesign/FooterRedesign";
+import SidebarMenu from "./Components/Navbar/Navbar1";
 
 const App = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <>
-      <Navbar />
+    {isMobile ? <SidebarMenu /> : <Navbar />}
       <Home/>
       <MeetMentors />
       <LiveCourses/>
