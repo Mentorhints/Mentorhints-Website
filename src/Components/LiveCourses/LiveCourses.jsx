@@ -1,3 +1,4 @@
+
 import CodeBrowser from "../../assets/code-browser.svg";
 import Database02 from "../../assets/database-02.svg";
 import LineChartUp02 from "../../assets/line-chart-up-02.svg";
@@ -53,6 +54,11 @@ const courses = [
  const LiveCourses = () => {
   const [slidesToShow, setSlidesToShow] = useState(1.8);
   const [searchTerm, setSearchTerm] = useState(""); // State for search input
+  const [animatedPlaceholder, setAnimatedPlaceholder] = useState("");
+  const [titleIndex, setTitleIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [showCursor, setShowCursor] = useState(true);
 
 
   useEffect(() => {
@@ -60,11 +66,11 @@ const courses = [
       if (window.innerWidth >= 1200) {
         setSlidesToShow(4.2);
       } else if (window.innerWidth >= 700) {
-        setSlidesToShow(3.5);
+        setSlidesToShow(3.3);
       } else if (window.innerWidth >= 400) {
-        setSlidesToShow(2.3);
+        setSlidesToShow(2.2);
       } else {
-        setSlidesToShow(1.5);
+        setSlidesToShow(1.2);
       }
     };
 
@@ -77,6 +83,41 @@ const courses = [
     // Clean up the event listener on component unmount
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    const currentTitle = courses[titleIndex].title;
+    
+    const typingSpeed = isDeleting ? 100 : 150; 
+    const pauseBeforeDeleting = 1000; 
+
+    const typingEffect = setTimeout(() => {
+      if (!isDeleting) {
+        setAnimatedPlaceholder(currentTitle.substring(0, charIndex + 1));
+        setCharIndex((prev) => prev + 1);
+        if (charIndex + 1 === currentTitle.length) {
+          setTimeout(() => setIsDeleting(true), pauseBeforeDeleting);
+        }
+      } else {
+        setAnimatedPlaceholder(currentTitle.substring(0, charIndex - 1));
+        setCharIndex((prev) => prev - 1);
+        if (charIndex - 1 < 0) {
+          setIsDeleting(false);
+          setTitleIndex((prev) => (prev + 1) % courses.length);
+        }
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(typingEffect);
+  }, [charIndex, isDeleting, titleIndex]);
+
+  // Cursor Blinking Effect
+  useEffect(() => {
+    const cursorBlink = setInterval(() => {
+      setShowCursor((prev) => !prev);
+    }, 500);
+    return () => clearInterval(cursorBlink);
+  }, []);
+
   const settings = {
     className: "center",
     infinite: false,
@@ -94,23 +135,23 @@ const courses = [
         <div className="overlap">
           <div className="Live-Header">        
   
-          <div className="header">
-          <div className="frame">
+            <div className="header">
+              <div className="frame">
                         <div className="ellipse" />
                         <div className="text-wrapper">Courses</div>
-         </div>
-            <div className="course-description">
-              <h1 className="course-heading">Live Courses</h1>
-              <p className="course-subtext">
-                Get learned from experts and gain real-world skills with flexible
-                online courses tailored for students.
-              </p>
+              </div>
+              <div className="course-description">
+                  <h1 className="course-heading">Live Courses</h1>
+                  <p className="course-subtext">
+                    Get learned from experts and gain real-world skills with flexible
+                    online courses tailored for students.
+                  </p>
+              </div>
             </div>
-          </div>
           <div className="search-container">
           <input
               type="text"
-              placeholder="Search Courses"
+              placeholder={`${animatedPlaceholder}${showCursor ? "|" : " "}`}
               className="search-text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -119,17 +160,17 @@ const courses = [
           </div>
           </div>
           <div className="courses-container">
-        <div className="courses-grid" >
-          <Slider {...settings}>
-          {filteredCourses.length > 0 ? (
+            <div className="courses-grid" >
+              <Slider {...settings}>
+                {filteredCourses.length > 0 ? (
                 filteredCourses.map((course, index) => (
                   <CourseCard key={index} {...course} />
                 ))
               ) : (
                 <p className="no-results">No courses found</p>
               )}</Slider>
-        </div>
-      </div>
+            </div>
+          </div>
         </div>
       </div>
     );

@@ -1,7 +1,5 @@
-:root {
-    /* Define all your CSS variables here (for reference, but not used directly) */
-  }
-  
+
+ 
   .desktop {
     display: flex;
     padding: 96px 144px;
@@ -87,6 +85,7 @@ box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     letter-spacing: 0.28px;
     white-space: nowrap;
     border: none;
+    width:100%
   }
   .search-text:focus{
     outline: none;
@@ -99,7 +98,7 @@ box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
  
   .course-tag {
     align-items: center;
-    background-color: #ffffff;
+    background: var(--Neutrals-neutral-BG, #FDFDFF);
     border-radius: 48px;
     display: inline-flex;
     gap: 6px;
@@ -234,4 +233,39 @@ letter-spacing: 0.28px;
   
   .view-course-btn {
     flex: 0 0 auto;
+  }
+  @media (max-width:720px){
+    .desktop{
+padding: 40px 16px 80px 16px;
+flex: 1 0 0;
+justify-content: unset;
+align-self: stretch;
+    }
+    .overlap{
+width: 100%;
+padding: 32px 16px;
+gap: 24px;
+    }
+    .Live-Header{
+      gap: 24px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: stretch;
+    }
+    .Live-Header .header{
+      width: unset;
+align-self: stretch;
+    }
+    .course-heading{
+font-size: 32px;
+line-height: 40px; /* 125% */
+    }
+ .search-container{
+padding: 9px 20px;
+align-self: stretch;
+ }
+ .search-text{
+  color: var(--Neutrals-neutral---500, #8D8D8F);
+ }
+
   }

@@ -30,4 +30,5 @@ const CourseCard = ({ icon: Icon, iconBgColor, title, skills, buttonText }) => (
   </div>
 );
 
+
 export default CourseCard;

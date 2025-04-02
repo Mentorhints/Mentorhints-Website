@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./SecondaryButton.css"; // Import external CSS
 
@@ -8,5 +9,6 @@ const SecondaryButton = ({ text }) => {
     </div>
   );
 };
+
 
 export default SecondaryButton;
