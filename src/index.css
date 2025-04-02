@@ -1,0 +1,20 @@
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+:root {
+  font-size: 16px;
+  --blue-color: #006af5;
+  --orange-color: #ff6c0a;
+  --green-color: #0fa958;
+  --font-primary: "satoshi", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-primary);
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}

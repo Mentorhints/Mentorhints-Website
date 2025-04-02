@@ -1,0 +1,40 @@
+.SuccessStoryCard {
+  border-radius: 8px;
+  background: var(--Neutrals-neutral-BG, #fdfdff);
+  width: 368px;
+  padding: 32px;
+  margin: 0px 24px;
+  height: fit-content;
+}
+.SuccessStoryCard:first-child {
+  color: var(--Neutrals-neutral---700, #39393d);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 125% */
+  letter-spacing: 0.28px;
+}
+.Mentee {
+  margin-top: 24px;
+  display: flex;
+}
+.Mentee :last-child {
+  display: flex;
+  flex-direction: column;
+}
+.Mentee_name {
+  color: var(--Neutrals-neutral---800, #08080c);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 133.333% */
+  margin: 2px 3px 0px;
+}
+.Mentee_role {
+  color: var(--Neutrals-neutral---700, #39393d);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: 0.245px;
+  margin: 1px 3px 0px;
+}

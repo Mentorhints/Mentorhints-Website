@@ -1,0 +1,23 @@
+.custom-arrow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px; /* Adjust spacing */
+  gap: 20px;
+}
+
+/* Default: Blurred effect for non-active slides */
+/* Default: Apply blur & reduce opacity */
+.mentor-slide.blurred {
+  filter: blur(4px);
+  opacity: 0.7;
+}
+
+/* Center slide: Make it clear and slightly larger */
+.mentor-slide.active {
+  filter: blur(0);
+  opacity: 1;
+}
+.slider-container {
+  margin-top: 40px;
+}
