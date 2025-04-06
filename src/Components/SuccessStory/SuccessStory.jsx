@@ -19,13 +19,14 @@ const SuccessStory = () => {
       <h2>Student Success Stories</h2>
 
       {!isDesktop ? (
+        <div className="slide-wrapper">
         <Slider {...settings}>
           {Feedback.map((itemF, index) => (
             <div key={index} className="slide-container">
               <SuccessStoryCard {...itemF} />
             </div>
           ))}
-        </Slider>
+        </Slider></div>
       ) : (
         <div className="StudentSuccess">
           {Feedback.map((itemF, index) => (
