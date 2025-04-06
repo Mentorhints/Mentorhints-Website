@@ -3,7 +3,7 @@ import Mentorhints from "../../assets/Mentorhints.svg";
 import udaya from "../../assets/udaya.svg";
 import forbes from "../../assets/Forbes.svg";
 import vengadesh from "../../assets/Venkatesh.svg";
-import google from "../../assets/Google.svg";
+import google from "../../assets/LogoGoogle.svg";
 import Arun from "../../assets/Arun.svg";
 import mindgates from "../../assets/mindgates.svg";
 

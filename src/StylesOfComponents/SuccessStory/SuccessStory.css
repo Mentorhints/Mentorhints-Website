@@ -31,7 +31,6 @@
     padding: 40px 16px;
     align-items: flex-start;
     align-self: stretch;
-    overflow: auto;
     gap: 32px;
   }
   .SuccessStory h2 {
@@ -39,9 +38,15 @@
     font-weight: 700;
     line-height: 40px; /* 125% */
   }
-  .StudentSuccess {
-    position: relative;
-    max-width: 352px;
-    width: 100%;
+  /* Wraps your card to center it properly */
+  .StudentSlider .slide-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  /* Optional: if you want to adjust card width here instead of inside the card */
+  .StudentSlider .slide-container > * {
+    width: 270px; /* same as your card width */
   }
 }

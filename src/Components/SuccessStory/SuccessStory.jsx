@@ -9,14 +9,11 @@ import { ScreenSizeContext } from "../../ScreenSizeContext.jsx";
 
 const SuccessStory = () => {
   const { isDesktop } = useContext(ScreenSizeContext);
-
   const settings = {
-    arrows: false,
+    infinite: false,
     slidesToShow: 1,
     swipeToSlide: true,
-    variableWidth: true,
   };
-
   return (
     <div className="SuccessStory">
       <h2>Student Success Stories</h2>
@@ -24,7 +21,9 @@ const SuccessStory = () => {
       {!isDesktop ? (
         <Slider {...settings}>
           {Feedback.map((itemF, index) => (
-            <SuccessStoryCard {...itemF} />
+            <div key={index} className="slide-container">
+              <SuccessStoryCard {...itemF} />
+            </div>
           ))}
         </Slider>
       ) : (
@@ -37,5 +36,4 @@ const SuccessStory = () => {
     </div>
   );
 };
-
 export default SuccessStory;

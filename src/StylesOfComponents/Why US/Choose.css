@@ -9,6 +9,9 @@
 
 .imagec {
   background-color: var(--blue-color);
+  border-radius: 8px;
+  padding: 6px;
+  height: 60px;
 }
 
 .choosing .titlec {
