@@ -47,7 +47,7 @@ const Home = () => {
 
           <div className="home-buttons">
             <button className="join-course">Join Course</button>
-            <button className="find-mentor"><span>Find Mentor  </span> <img src={arrow} alt="" /></button>
+            {/* <button className="find-mentor"><span>Find Mentor  </span> <img src={arrow} alt="" /></button> */}
           </div>
         </div>
 
