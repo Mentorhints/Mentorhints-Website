@@ -1,5 +1,5 @@
 .sidebar-container {
-    width: 340px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -14,6 +14,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 100;
+
   }
   
   .sidebar-logo {
@@ -52,11 +54,19 @@
     /* top: 4.5px; */
     position: absolute;
   }
-  
+  /* Inside your main CSS (Navbarmobile.css maybe) */
+.no-scroll {
+  overflow: hidden;
+}
+
   .sidebar-content {
+    text-align: right;
     align-self: stretch;
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    align-items: flex-end;
+    overflow-y: hidden;
   }
   
   .menu-section {
@@ -70,13 +80,14 @@
     padding: 8px 12px;
     background: #fdfdff;
     display: flex;
+    align-self: flex-end;
     justify-content: flex-start;
     align-items: flex-end;
     gap: 7px;
   }
   
   .menu-icon {
-    width: 24px;
+    width: 27px;
     height: 24px;
     position: relative;
     overflow: hidden;
@@ -101,6 +112,10 @@
     font-family: "Satoshi", sans-serif;
     font-weight: 500;
     color: #39393d;
+    text-align: right;
+  justify-content: flex-end;
+  padding-right:8px;
+  width: 100%;
   }
   
   .chevron-up {
@@ -134,19 +149,22 @@
   .menu-divider {
     align-self: stretch;
     height: 0;
-    outline: 1px #b4b4b5 solid;
+    outline: 0.5px #b4b4b5a4 solid;
     outline-offset: -0.5px;
+    width: 100vw;
   }
   
   .menu-item {
-    align-self: stretch;
+    /* width: 100%; */
+    justify-self:flex-end;
     height: 48px;
     padding: 12px 8px;
     border-radius: 4px;
-    outline: 1px #fdfdff solid;
+    /* outline: 1px #fdfdff solid; */
     outline-offset: -1px;
     display: flex;
     align-items: center;
+    align-items: flex-end;
     gap: 8px;
   }
   
@@ -171,6 +189,9 @@
     font-family: "Satoshi", sans-serif;
     font-weight: 400;
     color: #08080c;
+    text-align: right;
+    flex-grow: 1;
+    padding-right:20px;
   }
   
   .sidebar-links {
@@ -185,5 +206,7 @@
     font-family: "Satoshi", sans-serif;
     font-weight: 500;
     color: #39393d;
+    text-align: right;
+    padding-right:20px;
   }
   
