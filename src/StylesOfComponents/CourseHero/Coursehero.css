@@ -1,0 +1,201 @@
+.TestingAutomation {
+  position: relative;
+  max-width: 1440px;
+  width: 100%;
+  height: 534px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #08080c;
+}
+
+/* Hero Image Section */
+.HeroImgdiv {
+  background: linear-gradient(to left, rgba(8, 8, 12, 0) 40%, #08080c 95%);
+  position: absolute;
+  right: 0px;
+  width: 681px;
+  height: 534px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.HeroImgdiv img {
+  object-fit: cover;
+  /* Blending Fix */
+  z-index: 2;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    black 10%
+  ); /* Ensures Image Blends with Background */
+  mix-blend-mode: screen;
+}
+
+/* Course Info Section */
+.courseInfoBox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  align-items: center;
+  background: white;
+  width: 891px;
+  padding: 16px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+  text-align: center;
+  position: absolute;
+  bottom: 32px;
+  right: 280px;
+}
+
+.whitegridbox * {
+  font-family: var(--font-secondary);
+}
+
+.whitegridbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.whitegridbox :first-child {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--Neutrals-neutral---700, #39393d);
+}
+
+.whitegridbox .detailofcoursesinmh {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--Neutrals-neutral---800, #08080c);
+}
+
+.separator {
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 40px;
+  border-radius: 1px;
+  background: var(--Neutrals-neutral---100, #e6e6e8);
+  font-weight: bold;
+}
+
+/* Hide separator for last item */
+.course-info-box:last-child .separator {
+  display: none;
+}
+.ellipseforCourse {
+  position: absolute;
+  top: 16%;
+  left: 6.5%;
+}
+.textdet {
+  position: absolute;
+  gap: 8px 6px;
+  align-self: stretch;
+  flex-wrap: wrap;
+  padding: 120px 160px;
+}
+.textdet :first-child {
+  color: var(--Neutrals-neutral---500, #8d8d8f);
+
+  /* P3/Regular */
+  font-size: 14px;
+  font-style: normal;
+
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: 0.245px;
+}
+.textdet h3 {
+  color: var(--Neutrals-neutral-BG, #fdfdff);
+  /* H3/Bold */
+  padding: 15px 0px;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48px; /* 120% */
+  letter-spacing: -0.4px;
+  width: 289px;
+}
+.textdet :nth-child(3) {
+  color: var(--Neutrals-neutral---500, #8d8d8f);
+
+  /* P2/Regular */
+  width: 289px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+  letter-spacing: 0.28px;
+}
+.textdet button {
+  display: flex;
+  width: 160px;
+  margin-top: 20px;
+  padding: 10px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid black;
+  border-radius: 6px;
+  background: var(--Blue-blue---600, #0050b8);
+  color: white;
+}
+@media (max-width: 550px) {
+  .TestingAutomation {
+    height: 700px;
+    max-width: 352px;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .courseInfoBox {
+    display: flex;
+    width: 300px;
+    padding: 16px 30px;
+    justify-content: center;
+    align-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    border-radius: 18px;
+    top: 0%;
+    left: 0;
+    position: static;
+  }
+  .whitegridbox :first-child {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--Neutrals-neutral---700, #39393d);
+  }
+  .textdet {
+    position: static;
+    display: flex;
+    width: 340px;
+    padding: 56px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .textdet button {
+    margin-top: 10px;
+    z-index: 2;
+  }
+  .grids {
+    position: absolute;
+    top: 0;
+  }
+  .textdet h3 {
+    padding: 2px 0px;
+  }
+  .ellipseforCourse {
+    top: 10%;
+    left: 0%;
+  }
+}

@@ -1,0 +1,128 @@
+.coursedet {
+  display: flex;
+  max-width: 1480px;
+  width: 100%;
+  margin: auto;
+  padding: 56px 160px;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.coursedet h4 {
+  color: var(--Neutrals-neutral---800, #08080c);
+  text-align: center;
+
+  /* H4/Medium */
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px; /* 125% */
+}
+
+.benefittextonly {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  width: 544px;
+  min-height: 260px;
+  gap: 40px;
+}
+.benefitpoints div {
+  min-width: 154px;
+  display: flex;
+  gap: 4px;
+}
+.benefitpoints {
+  display: flex;
+  width: 256px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+.benefitpoints div p {
+  color: var(--Neutrals-neutral---800, #08080c);
+
+  /* P2/Medium */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 125% */
+  letter-spacing: 0.28px;
+}
+.benefitpoints p {
+  color: var(--Neutrals-neutral---700, #39393d);
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: 0.245px;
+}
+.boxofdet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  gap: 0px;
+}
+.animationbox {
+  position: relative;
+  margin-right: 100px;
+}
+.rectangularbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 10px;
+  position: absolute;
+
+  /* Remove fixed width to keep natural sizing */
+  border-radius: 6px;
+  background: var(--Neutrals-neutral-BG, #fdfdff);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+  white-space: nowrap; /* Prevent text from breaking */
+
+  /* Use transform for positioning instead of left: 50% */
+  transform: translate(-50%, -50%);
+}
+.rectangularbox h6 {
+  color: var(--Neutrals-neutral---800, #08080c);
+  text-align: center;
+
+  /* H6/Bold */
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 133.333% */
+}
+@media (max-width: 550px) {
+  .coursedet {
+    max-width: 352px;
+    padding: 30px 20px;
+    margin: auto;
+  }
+  .benefittextonly {
+    width: 300px;
+    grid-template-columns: 1fr;
+    place-items: center;
+  }
+  .boxofdet {
+    gap: 40px;
+    flex-direction: column;
+  }
+
+  .animationbox {
+    position: relative;
+    margin-right: 0px;
+  }
+  .rectangularbox h6 {
+    /* H6/Bold */
+    font-size: 12px;
+    line-height: 16px; /* 133.333% */
+  }
+  .rectangularbox {
+    padding: 5.345px 8.018px;
+    gap: 6.682px;
+  }
+}

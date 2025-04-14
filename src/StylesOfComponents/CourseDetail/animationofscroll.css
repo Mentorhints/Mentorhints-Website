@@ -1,0 +1,17 @@
+.ellipse {
+  width: 312px;
+  height: 192px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 2px solid var(--Neutrals-neutral---100, #e6e6e8);
+  position: "absolute";
+  left: "50%";
+  top: "50%";
+  transform: "translate(-50%, -50%)";
+}
+@media (max-width: 550px) {
+  .ellipse {
+    width: 210px;
+    height: 128px;
+  }
+}

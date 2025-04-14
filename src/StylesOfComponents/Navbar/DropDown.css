@@ -1,0 +1,26 @@
+.WhiteDropDown {
+  font-size: 18px;
+  width: 585px;
+  padding: 1em 1.75em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0px 32px;
+  background: var(--Neutrals-neutral-BG, #fdfdff);
+  box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2);
+  position: absolute;
+  left: 14em;
+  top: 4.5em;
+  z-index: 2;
+}
+.NavigationSections {
+  padding: 0.67em 0.45em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.CourseNames {
+  display: inline;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+  letter-spacing: 0.27px;
+}

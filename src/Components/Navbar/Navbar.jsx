@@ -4,8 +4,10 @@ import check from "../../assets/ArrowBlack.svg";
 import search from "../../assets/SearchIcon.svg";
 import hat from "../../assets/graduation_hat.svg";
 import "../../StylesOfComponents/Navbar/Navbar.css";
-import dropdown from "../../assets/Dropdown menu.svg";
+import { motion } from "framer-motion";
+
 import { useState } from "react";
+import DropDown from "./DropDown.jsx";
 const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isOpen, setIsOpen] = useState(false); // State to manage dropdown visibility
@@ -18,20 +20,24 @@ const Navbar = () => {
     <div className="Navbar">
       <img src={MHLogo} alt="logo" />
       <div className="NavStack">
-        <p>
+        <a onClick={handleToggle}>
           <img src={hat} alt="" className="hatgraduation" />
           Courses
-          <img
+          <motion.img
             src={check}
             alt="Arrow"
+            animate={{
+              rotate: isOpen ? 180 : 0,
+            }}
+            transition={{ duration: 0.3 }}
             className="ArrowImg"
-            onClick={handleToggle} // Add click event to toggle dropdown
+            onClick={handleToggle}
           />
-        </p>
-        {isOpen && <img src={dropdown} className="DropdownImg" />}
-        <p>For Referral</p>
-        <p>About</p>
-        <p>Blogs</p>
+        </a>
+        {isOpen && <DropDown />}
+        <a href="#">For Referral</a>
+        <a href="#">About</a>
+        <a href="#">Blogs</a>
       </div>
       <div className="buttonsofnav">
         <div className="searchbar">
