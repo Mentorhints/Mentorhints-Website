@@ -14,10 +14,13 @@ import navicon1 from "../../assets/Nav icon set.svg";
 import setting from "../../assets/settings.svg";
 import uiux from "../../assets/UIUX.svg";
 import logo from "../../assets/Logo (1).svg";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SidebarMenu = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const navigate =useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -42,7 +45,7 @@ const SidebarMenu = () => {
   return (
     <div className="sidebar-container">
       <div className="sidebar-header">
-        <div className="sidebar-logo">
+        <div className="sidebar-logo" onClick={()=>navigate("/")}>
           <img src={logo} alt="" />
         </div>
         <div className="close-icon">
@@ -93,13 +96,13 @@ const SidebarMenu = () => {
                   >
                     {/* Menu Items */}
                     {[
-                      { icon: fullstack, label: "Full-stack Development" },
-                      { icon: frontend, label: "Frontend Development" },
-                      { icon: backend, label: "Backend Development" },
-                      { icon: dataAnalsts, label: "Data Analyst" },
-                      { icon: uiux, label: "UI/UX Design" },
-                      { icon: setting, label: "Testing Automation" },
-                    ].map(({ icon, label }, i) => (
+                      { icon: fullstack, label: "Full-stack Development" ,path:""},
+                      { icon: frontend, label: "Frontend Development",path:"" },
+                      { icon: backend, label: "Backend Development",path:"" },
+                      { icon: dataAnalsts, label: "Data Analyst",path:"/courses/python" },
+                      { icon: uiux, label: "UI/UX Design" ,path:"/courses/aiml"},
+                      { icon: setting, label: "Testing Automation",path:"/courses/testing-automation" },
+                    ].map(({ icon, label ,path}, i) => (
                       <div key={i}>
                         
                         <div className="menu-item">
@@ -108,7 +111,9 @@ const SidebarMenu = () => {
                               <img src={icon} alt="" />
                             </div>
                           </div>
-                          <div className="menu-item-text">{label}</div>
+                          <div className="menu-item-text" onClick={()=>{setMenuOpen(false);
+                            setDropdownOpen(false)
+                          }}><Link to={path}>{label}</Link></div>
                         </div>
                         <div className="menu-divider" style={{width:"100vw"}}></div>
                       </div>

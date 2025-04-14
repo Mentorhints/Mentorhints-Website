@@ -7,7 +7,7 @@ import fullstack from "../../assets/Fullstack.svg";
 import backend from "../../assets/Backend.svg";
 import { Link } from "react-router-dom";
 import "../../StylesOfComponents/Navbar/DropDown.css";
-const DropDown = () => {
+const DropDown = ({setIsOpen}) => {
   const dropdownData = [
     { icon: fullstack, label: "Full-stack Development", path: "" },
     { icon: frontend, label: "Frontend Development", path: "" },
@@ -23,7 +23,7 @@ const DropDown = () => {
   return (
     <div className="WhiteDropDown">
       {dropdownData.map((item, index) => (
-        <Link to={item.path} key={index} className="NavigationSections">
+        <Link to={item.path} key={index} className="NavigationSections" onClick={()=>setIsOpen(false)}>
           <img src={item.icon} alt={item.label} className="CourseIcons" />
           <p className="CourseNames">{item.label}</p>
         </Link>

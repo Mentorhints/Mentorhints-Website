@@ -14,7 +14,7 @@ const c = 90; // Mobile horizontal radius
 const d = 60; // Mobile vertical radius
 const initialPositions = [0, Math.PI / 2, Math.PI, (3 * Math.PI) / 2]; // Initial angles
 
-const CourseDetail = () => {
+const CourseDetail = ({courseName}) => {
   const { isDesktop } = useContext(ScreenSizeContext);
   const [angles, setAngles] = useState(initialPositions);
   const [activeIndex, setActiveIndex] = useState(0); // Track active box index
@@ -30,7 +30,7 @@ const CourseDetail = () => {
 
   return (
     <div className="coursedet">
-      <h4>Testing Automation Course Details</h4>
+      <h4>{courseName} Course Details</h4>
       <div className="boxofdet">
         <div className="benefittextonly">
           {befitoftrainings.map((trainig, index) => (

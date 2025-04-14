@@ -22,10 +22,12 @@ export default function Container() {
                 </div>
                 <span className={styles.studentPack}>Student Pack</span>
               </div>
-
+              <div className={styles.pack}>
               <div className={styles.pricing}>
                 <p className={styles.dprice}>₹9,999 </p>
                 <p className={styles.oprice}>₹11,999 </p>
+              </div>
+              <p className={styles.optionl_}>*EMI options available</p>
               </div>
 
               <div className={styles.benefits}>

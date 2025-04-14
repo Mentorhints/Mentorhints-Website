@@ -34,7 +34,7 @@ const Navbar = () => {
             onClick={handleToggle}
           />
         </a>
-        {isOpen && <DropDown />}
+        {isOpen && <DropDown setIsOpen={setIsOpen} />}
         <a href="#">For Referral</a>
         <a href="#">About</a>
         <a href="#">Blogs</a>
