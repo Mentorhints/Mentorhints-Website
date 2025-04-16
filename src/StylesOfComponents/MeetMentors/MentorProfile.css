@@ -27,3 +27,14 @@
   padding-top: 10px;
   margin: auto;
 }
+@media (max-width:500px){
+  .MentorProfile{
+    margin: 8px auto;
+    height: 295px;
+  }
+  .PersonImage{
+    margin:10px auto ;
+    height: 200px;
+    width:200px
+  }
+}

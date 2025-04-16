@@ -99,8 +99,10 @@ const SidebarMenu = () => {
                       { icon: fullstack, label: "Full-stack Development" ,path:""},
                       { icon: frontend, label: "Frontend Development",path:"" },
                       { icon: backend, label: "Backend Development",path:"" },
-                      { icon: dataAnalsts, label: "Data Analyst",path:"/courses/python" },
-                      { icon: uiux, label: "UI/UX Design" ,path:"/courses/aiml"},
+                      { icon: dataAnalsts, label: "Python with DataScience",path:"/courses/python" },
+                      // { icon: dataAnalsts, label: "Data Analyst",path:"/courses/python" },
+                      // { icon: uiux, label: "UI/UX Design" ,path:"/courses/aiml"},
+                      { icon: uiux, label: "AI Development" ,path:"/courses/aiml"},
                       { icon: setting, label: "Testing Automation",path:"/courses/testing-automation" },
                     ].map(({ icon, label ,path}, i) => (
                       <div key={i}>

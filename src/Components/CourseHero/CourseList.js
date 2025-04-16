@@ -1,6 +1,7 @@
 import Tester from "../../assets/Tester.svg";
 import AIMLImg from "../../assets/AIML.svg";
 import Python from "../../assets/Python.svg";
+import python from "../../assets/Python_logo.svg"
 export const courses = {
   "testing-automation": {
     name: "Testing Automation",
@@ -18,6 +19,6 @@ export const courses = {
     name: "Python with Data science",
     description:
       "Learn Python with data science in 5 months including data structure, algorithm, front & back-end, devops ",
-    image: Python,
+    image: python,
   },
 };

@@ -17,8 +17,14 @@
 .mentor-slide.active {
   filter: blur(0);
   opacity: 1;
+  
 }
 
 .slider-container {
   margin-top: 40px;
+}
+@media (max-width:450px){
+  .mentor-slide.active{
+    margin-left: -20px;
+  }
 }

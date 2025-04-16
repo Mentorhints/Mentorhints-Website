@@ -87,10 +87,11 @@ letter-spacing: 0.28px;
   font-weight: 700;
   line-height: 64px; /* 114.286% */
   letter-spacing: -0.42px;
+  align-self: last baseline;
 }
 .oprice {
   color: var(--Neutrals-neutral---500, #8d8d8f);
-
+  align-self:last baseline;
   font-size: 32px;
   font-style: normal;
   font-weight: 700;

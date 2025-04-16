@@ -12,8 +12,10 @@ const DropDown = ({setIsOpen}) => {
     { icon: fullstack, label: "Full-stack Development", path: "" },
     { icon: frontend, label: "Frontend Development", path: "" },
     { icon: backend, label: "Backend Development", path: "" },
-    { icon: dataAnalsts, label: "Data Analyst", path: "/courses/python" },
-    { icon: uiux, label: "UI/UX Design", path: "/courses/aiml" },
+    // { icon: dataAnalsts, label: "Data Analyst", path: "/courses/python" },
+    // { icon: uiux, label: "UI/UX Design", path: "/courses/aiml" },
+    { icon: dataAnalsts, label: "Python with Datascience", path: "/courses/python" },
+    { icon: uiux, label: "AI Development", path: "/courses/aiml" },
     {
       icon: testing,
       label: "Testing Automation",
