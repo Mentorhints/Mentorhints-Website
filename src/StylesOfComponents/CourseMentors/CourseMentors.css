@@ -95,6 +95,7 @@
   .ItemsContainer {
     padding: 40px 10px 80px 10px;
     width: 352px;
+    margin: auto;
   }
   .mentorheadingcourse h4 {
     text-align: center;
