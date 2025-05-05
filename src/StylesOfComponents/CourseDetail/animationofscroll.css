@@ -1,4 +1,4 @@
-.ellipseofAnimation {
+.ellipse {
   width: 312px;
   height: 192px;
   flex-shrink: 0;
@@ -10,7 +10,7 @@
   transform: "translate(-50%, -50%)";
 }
 @media (max-width: 550px) {
-  .ellipseofAnimation {
+  .ellipse {
     width: 210px;
     height: 128px;
   }

@@ -20,6 +20,7 @@ const CarouselReactSlick = () => {
     sliderRef.current.slickPrev();
   };
   const settings = {
+    className: "center",
     infinite: true,
     speed: 200,
     slidesToShow: 3,

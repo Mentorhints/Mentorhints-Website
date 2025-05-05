@@ -193,7 +193,10 @@
     flex-grow: 1;
     padding-right:20px;
   }
-  
+  .menu-item-text a{
+    color: #08080c;
+    text-decoration: none;
+  }
   .sidebar-links {
     display: flex;
     flex-direction: column;

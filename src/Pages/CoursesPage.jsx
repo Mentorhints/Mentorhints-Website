@@ -20,7 +20,7 @@ const Courses = () => {
         courseImage={course.image}
         courseDescription={course.description}
       />
-      <CourseDetail />
+      <CourseDetail  courseName={course.name}/>
       <CourseCurriculum />
       <CardComponent />
       <Container />
