@@ -4,12 +4,27 @@ import FormMHGirl from "../../assets/FormImageGirl.svg";
 import "../../StylesOfComponents/FormPage/MainForm.css";
 import Step1 from "./Step1.jsx";
 import Step2 from "./Step2.jsx";
+import Step3 from "./Step3.jsx";
 import ProgressBar from "./ProgressBar.jsx";
 const MainForm = () => {
-  const [step, setStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(1);
+  const [formData, setFormData] = useState({
+    name: "",
+    mobile: "",
+    email: "",
+    course: "",
+    experience: "",
+  });
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+  const goToNextStep = () => {
+    setCurrentStep((prev) => prev + 1);
+  };
 
-  const nextStep = () => setStep((prev) => prev + 1);
-  const prevStep = () => setStep((prev) => prev - 1);
   return (
     <div className="MainBox">
       <div className="greyBox">
@@ -18,9 +33,22 @@ const MainForm = () => {
         <img src={FormMHGirl} alt="Image" className="FormMHGirl" />
       </div>
       <div className="formBox">
-        <ProgressBar currentStep={step} />
-        {step === 1 && <Step1 onContinue={nextStep} />}
-        {step === 2 && <Step2 onBack={prevStep} />}
+        <ProgressBar currentStep={currentStep} />
+        {currentStep === 1 && (
+          <Step1
+            formData={formData}
+            onContinue={goToNextStep}
+            handleChange={handleChange}
+          />
+        )}
+        {currentStep === 2 && (
+          <Step2
+            formData={formData}
+            handleChange={handleChange}
+            onNext={goToNextStep}
+          />
+        )}
+        {currentStep > 2 && <Step3 />}
       </div>
     </div>
   );

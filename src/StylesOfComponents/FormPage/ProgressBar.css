@@ -1,9 +1,3 @@
-:root {
-  --blue-active: #006af5;
-  --blue-visited: #004093;
-  --grey-unvisited: #e6e6e8;
-}
-
 .progress-wrapper {
   max-width: 293px;
   width: 100%;
@@ -17,8 +11,18 @@
   position: relative;
   width: 80%;
   height: 2px;
-  background-color: var(--grey-unvisited);
+  background-color: var(--unvisited-color);
   margin-bottom: 12px;
+}
+.progress-line.visited-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--visited-color);
+  z-index: 0;
 }
 
 .dot {
@@ -27,7 +31,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--grey-unvisited);
+  background-color: var(--unvisited-color);
 }
 
 .dot:first-child {
@@ -39,11 +43,11 @@
 }
 
 .dot.active {
-  background-color: var(--blue-active);
+  background-color: var(--active-color);
 }
 
 .dot.visited {
-  background-color: var(--blue-visited);
+  background-color: var(--visited-color);
 }
 
 .labels {
@@ -54,15 +58,15 @@
 }
 
 .label {
-  color: var(--grey-unvisited);
+  color: var(--unvisited-color);
 }
 
 .label.active {
-  color: var(--blue-active);
+  color: var(--active-color);
   font-weight: 500;
 }
 
 .label.visited {
-  color: var(--blue-visited);
+  color: var(--visited-color);
   font-weight: 500;
 }

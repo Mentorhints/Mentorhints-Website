@@ -1,9 +1,9 @@
 import React from "react";
 
-const Step1 = () => {
+const Step1 = ({ onContinue }) => {
   return (
     <div>
-      <button>Continue</button>
+      <button onClick={onContinue}>Continue</button>
     </div>
   );
 };
