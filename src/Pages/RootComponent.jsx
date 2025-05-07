@@ -5,14 +5,16 @@ import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/FooterRedesign/FooterRedesign";
 import SidebarMenu from "../Components/Navbar/Navbar1";
 import { ScreenSizeContext } from "../ScreenSizeContext.jsx";
+import MainForm from "../Components/FormPage/MainForm.jsx";
 
 const RootComponent = () => {
   const { isDesktop } = useContext(ScreenSizeContext);
   return (
     <>
-      {isDesktop ? <Navbar /> : <SidebarMenu />}
+      <MainForm />
+      {/* {isDesktop ? <Navbar /> : <SidebarMenu />}
       <Outlet />
-      <Footer />
+      <Footer /> */}
     </>
   );
 };

@@ -5,6 +5,9 @@
   --orange-color: #ff6c0a;
   --green-color: #0fa958;
   --font-primary: "satoshi", sans-serif;
+  --active-color: #006af5;
+  --visited-color: #004093;
+  --unvisited-color: #e6e6e8;
 }
 
 * {
