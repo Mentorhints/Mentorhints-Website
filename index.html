@@ -5,6 +5,71 @@
     <link rel="icon" type="image/svg+xml" href="/src/assets/Logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mentorhints</title>
+    <script
+    id="otpless-sdk"
+    src="https://otpless.com/v4/headless.js"
+    data-appid="UTAKP1SCGVZLLJB29M64"
+  ></script>
+  <script>
+    const callback = (eventCallback) => {
+   
+       // console.log({eventCallback});
+       
+       const ONETAP = () => {
+           const {
+               response
+           } = eventCallback;
+           const token = response.token;
+           // Implement your custom logic here.
+           console.log({
+               response,
+               token: response.token
+           });
+       };
+   
+       const OTP_AUTO_READ = () => {
+           const {
+               response: {
+                   otp
+               }
+           } = eventCallback;
+            // Auto-read OTP value
+           //console.log(otp);
+       }
+   
+       const FAILED = () => {
+           const {
+               response
+           } = eventCallback;
+   
+           console.log({
+               response
+           })
+       }
+   
+       const FALLBACK_TRIGGERED = () => {
+           const {
+               response
+           } = eventCallback;
+   
+           console.log({
+               response
+           })
+       }
+   
+   
+       const EVENTS_MAP = {
+           ONETAP,
+           OTP_AUTO_READ,
+           FAILED,
+           FALLBACK_TRIGGERED
+       }
+   
+       if ("responseType" in eventCallback) EVENTS_MAP[eventCallback.responseType]()
+   }
+     // Initialize OTPLESS SDK with the defined callback.
+     const OTPlessSignin = new OTPless(callback);
+   </script>
   </head>
   <body>
     <div id="root"></div>
