@@ -31,3 +31,23 @@
 .formBox {
   width: 50%;
 }
+@media screen and (max-width: 550px) {
+  .MainBox {
+    max-width: 352px;
+    display: flex;
+    flex-direction: column;
+  }
+  .greyBox h3 {
+    max-width: 284px;
+    font-size: 26px;
+  }
+  .LogoMH {
+    margin: 40px auto 12px;
+  }
+  .greyBox {
+    width: 100%;
+  }
+  .formBox {
+    width: 100%;
+  }
+}
