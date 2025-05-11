@@ -13,6 +13,8 @@ const [otpVerified, setOtpVerified] = useState(false);
 const [resendTimer, setResendTimer] = useState(10);
 const [showResend, setShowResend] = useState(false);
 const [canResend, setCanResend] = useState(false);
+const [otpError, setOtpError] = useState(false);
+
 
 useEffect(() => {
   let timer;
@@ -103,15 +105,18 @@ const verifyOTP = () => {
         setMessage("OTP verified successfully!");
         setMessageColor("green");
         setOtpVerified(true); 
+        setOtpError(false);
         console.log("TOKEN:", res.token); // If needed later
         // onContinue(); // Proceed to next step
       } else {
         setMessage("OTP doesn’t match. Retry");
         setMessageColor("red");
+        setOtpError(true);
       }
     })
     .catch((err) => {
       console.error(err);
+      setOtpError(true);
       setMessage("OTP doesn’t match. Retry");
       setMessageColor("red");
       setOtp(["", "", "", "", "", ""]);
@@ -179,6 +184,13 @@ const verifyOTP = () => {
               ref={(el) => (otpRefs.current[index] = el)}
               onChange={(e) => handleOtpChange(index, e.target.value)}
               onKeyDown={(e) => handleKeyDown(e, index)}
+              style={{
+      border: otpError
+        ? "1px solid #D42E1B"
+        : otpVerified
+        ? "1px solid #00D15A"
+        : ""
+    }}
             />
           ))}
         </div>
@@ -215,9 +227,7 @@ const verifyOTP = () => {
             fontSize:"12px",
             textAlign: "left",
           }}>{errors.mobile}</div>}
-      </div>
-
-      {/* Message Box */}
+          {/* Message Box */}
       {message && (
         <div
         className="mess"
@@ -230,6 +240,7 @@ const verifyOTP = () => {
           {message}
         </div>
       )}
+      </div>
 
 
      <div className="continue-button" style={{ top: 332 }}>
