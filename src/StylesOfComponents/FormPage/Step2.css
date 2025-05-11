@@ -1,0 +1,72 @@
+.form-container {
+  max-width: 352px;
+  margin: auto;
+}
+.form-group {
+  margin-bottom: 24px;
+}
+.FormDataLabel {
+  display: block;
+  width: 100%;
+  color: var(--Neutrals-neutral---800, #08080c);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px; /* 133.333% */
+  letter-spacing: 0.27px;
+  margin-bottom: 8px;
+}
+.FormInputBox {
+  display: flex;
+  padding: 12px 16px;
+  align-items: center;
+  width: 100%;
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid var(--Neutrals-neutral---100, #e6e6e8);
+  background: var(--Neutrals-neutral---50, #f5f5f7);
+  font-size: 16px;
+}
+.FormInputBox:focus-visible,
+.scrollable-select:hover,
+.simple-select:hover {
+  border: 1px solid var(--Blue-blue---600, #0050b8);
+}
+
+.register-btn {
+  display: flex;
+  width: 352px;
+  padding: 12px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  background: var(--Blue-blue---200, #b0d1fc);
+  color: var(--Neutrals-neutral-BG, #fdfdff);
+  font-weight: 500;
+  line-height: 20px; /* 125% */
+  letter-spacing: 0.28px;
+  margin-top: 44px;
+  margin-bottom: 128px;
+}
+.register-btn.btn-active {
+  background: var(--Blue-blue---600, #0050b8);
+}
+.scrollable-select,
+.simple-select {
+  appearance: none; /* Remove default arrow in modern browsers */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+/* Container styling */
+.select-container {
+  position: relative;
+  width: 100%; /* Adjust width as needed */
+}
+
+.chevron-down {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}

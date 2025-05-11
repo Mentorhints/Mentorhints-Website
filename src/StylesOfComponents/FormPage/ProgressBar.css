@@ -70,3 +70,22 @@
   color: var(--visited-color);
   font-weight: 500;
 }
+
+@media screen and (max-width: 550px) {
+  .labels .label {
+    display: none;
+  }
+
+  .labels .label.active {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .labels {
+    justify-content: center;
+  }
+  .progress-wrapper {
+    margin: 48px auto;
+  }
+}

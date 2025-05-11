@@ -1,4 +1,3 @@
-import React from "react";
 import "../../StylesOfComponents/FormPage/ProgressBar.css";
 
 const ProgressBar = ({ currentStep }) => {

@@ -10,6 +10,21 @@ const Step1 = ({ onContinue, formData, handleChange }) => {
   const otpRefs = useRef([]);
   const [errors, setErrors] = useState({ name: "", mobile: "" });
 const [otpVerified, setOtpVerified] = useState(false);
+const [resendTimer, setResendTimer] = useState(10);
+const [showResend, setShowResend] = useState(false);
+const [canResend, setCanResend] = useState(false);
+
+useEffect(() => {
+  let timer;
+  if (showResend && resendTimer > 0) {
+    timer = setTimeout(() => {
+      setResendTimer((prev) => prev - 1);
+    }, 1000);
+  } else if (resendTimer === 0) {
+    setCanResend(true);
+  }
+  return () => clearTimeout(timer);
+}, [showResend, resendTimer]);
 
 const validateName = (name) => {
   if (!/^[A-Za-z\s]+$/.test(name)) {
@@ -62,6 +77,9 @@ const validateMobile = (mobile) => {
     }).then(() => {
       setMessage("OTP sent successfully!");
       setMessageColor("green");
+      setShowResend(true);         // Show the resend option
+      setCanResend(false);         // Disable resend initially
+      setResendTimer(10);
     }).catch(() => {
       setMessage("Failed to send OTP.");
       setMessageColor("red");
@@ -88,7 +106,7 @@ const verifyOTP = () => {
         console.log("TOKEN:", res.token); // If needed later
         // onContinue(); // Proceed to next step
       } else {
-        setMessage("OTP verification failed. Please try again.");
+        setMessage("OTP doesn’t match. Retry");
         setMessageColor("red");
       }
     })
@@ -141,7 +159,7 @@ const verifyOTP = () => {
           />
           {showSendOtp && (
             <button onClick={phoneAuth} className="send-otp-btn">
-              Send OTP
+              Get OTP
             </button>
           )}
         </div>
@@ -164,32 +182,54 @@ const verifyOTP = () => {
             />
           ))}
         </div>
-      </div>
+        {showResend && (
+  <button
+    className="resend-otp-btn"
+    onClick={() => {
+      if (canResend) {
+        phoneAuth();
+      }
+    }}
+    disabled={!canResend}
+    style={{
+      opacity: canResend ? 1 : 0.5,
+      cursor: canResend ? "pointer" : "not-allowed",
+      background: "none",
+      border: "none",
+      textDecoration: "underline",
+      fontSize: "12px",
+      marginTop: "5px"
+    }}
+  >
+    {canResend ? "Resend OTP" : `Resend in ${resendTimer}s`}
+  </button>
+)}
 
-      {/* Message Box */}
-      {message && (
-        <div
-          style={{
-            color: messageColor,
-            fontSize:"12px",
-            textAlign: "left",
-            width:"50%"
-          }}
-        >
-          {message}
-        </div>
-      )}{errors.name && <div className="error-text" style={{
+        {errors.name && <div className="error-text" style={{
             color: "red",
             fontSize:"12px",
             textAlign: "left",
-            width:"50%"
           }}>{errors.name}</div>}
         {errors.mobile && <div className="error-text"style={{
             color: "red",
             fontSize:"12px",
             textAlign: "left",
-            width:"50%"
           }}>{errors.mobile}</div>}
+      </div>
+
+      {/* Message Box */}
+      {message && (
+        <div
+        className="mess"
+          style={{
+            color: messageColor,
+            fontSize:"12px",
+            textAlign: "left",
+          }}
+        >
+          {message}
+        </div>
+      )}
 
 
      <div className="continue-button" style={{ top: 332 }}>
