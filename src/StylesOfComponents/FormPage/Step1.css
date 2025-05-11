@@ -40,20 +40,13 @@
     gap: 10px;
   }
   .input-box button{
-    color: var(--Blue-blue---600, #0050B8);
-
-/* P4/Medium */
-font-family: Satoshi;
-font-size: 12px;
-font-style: normal;
-font-weight: 600;
-line-height: 16px; /* 133.333% */
-letter-spacing: 0.21px;
-text-decoration-line: underline;
-text-wrap: nowrap;
-outline: none;
-border: none;
-background: inherit;
+    text-wrap: nowrap;
+    outline: none;
+    border: none;
+    background: #0050B8;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
   }
 
   .text-input {
@@ -103,19 +96,7 @@ background: inherit;
     color: #6A6A6B;
     outline: none;
   }
-  .resend-otp-btn{
-    color: var(--Blue-blue---600, #0050B8);
-text-align: right;
-
-/* P4/Medium */
-font-family: Satoshi;
-font-size: 12px;
-font-style: normal;
-font-weight: 500;
-line-height: 16px; /* 133.333% */
-letter-spacing: 0.21px;
-width: 100%;
-  }
+  
   .continue-button {
     width: 352px;
     padding: 12px 16px;
@@ -135,27 +116,9 @@ width: 100%;
     cursor: pointer;
   }
   .error-text {
-    margin-top: 4px;
   color: red;
   font-size: 12px;
-
-}
-.mess{
-  width: 50%;
-align-self: baseline;
-text-wrap: nowrap;
+  margin-top: 4px;
 }
 
-@media screen and (max-width: 730px) {
-  .form-group{
-    width: 90%;
-  }
-  .continue-button{
-    width:90%
-  }
-  .mess{
-    width: 90%;
-  }
-
-}
   
