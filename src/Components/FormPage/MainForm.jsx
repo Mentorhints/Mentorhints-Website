@@ -44,7 +44,7 @@ const MainForm = () => {
         )}
       </div>
       <div className="formBox">
-        <ProgressBar currentStep={currentStep} />
+        <ProgressBar currentStep={currentStep} title1="Fill your details" title2="Course selection"/>
         {currentStep === 1 && (
           <Step1
             formData={formData}

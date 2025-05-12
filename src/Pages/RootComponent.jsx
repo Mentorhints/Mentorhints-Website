@@ -9,12 +9,13 @@ import { ScreenSizeContext } from "../ScreenSizeContext.jsx";
 const RootComponent = () => {
   const { isDesktop } = useContext(ScreenSizeContext);
   const location = useLocation();
-  const isFormPage = location.pathname === "/form";
+  const isFormPage = location.pathname === "/form"  ;
+  const isFormeferral=location.pathname==="/formreferral"
   return (
     <>
-      {!isFormPage && (isDesktop ? <Navbar /> : <SidebarMenu />)}
+      {(!isFormPage && !isFormeferral)  && (isDesktop ? <Navbar /> : <SidebarMenu />)}
       <Outlet />
-      {!isFormPage && <Footer />}
+      {(!isFormPage && !isFormeferral) && <Footer />}
     </>
   );
 };

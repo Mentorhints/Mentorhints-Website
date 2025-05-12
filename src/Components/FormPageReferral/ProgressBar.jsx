@@ -1,6 +1,6 @@
 import "../../StylesOfComponents/FormPage/ProgressBar.css";
 
-const ProgressBar = ({ currentStep }) => {
+const ProgressBar = ({ currentStep,title1,title2 }) => {
   return (
     <div className="progress-wrapper">
       <div className={`progress-line ${currentStep > 1 ? "visited-line" : ""}`}>
@@ -21,14 +21,14 @@ const ProgressBar = ({ currentStep }) => {
             currentStep === 1 ? "active" : currentStep > 1 ? "visited" : ""
           }`}
         >
-          Fill your details
+          {title1}
         </span>
         <span
           className={`label ${
             currentStep === 2 ? "active" : currentStep > 2 ? "visited" : ""
           }`}
         >
-          Course selection
+          {title2}
         </span>
       </div>
     </div>

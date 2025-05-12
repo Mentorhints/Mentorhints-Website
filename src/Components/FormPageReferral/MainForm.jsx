@@ -1,6 +1,6 @@
 import { useState } from "react";
 import LogoMH from "../../assets/MHLogo.svg";
-import FormMHGirl from "../../assets/FormImageGirl.svg";
+import FormMHGirl from "../../assets/Helping a partner-pana 1.svg";
 import "../../StylesOfComponents/FormPage/MainForm.css";
 import Step1 from "./Step1.jsx";
 import Step2 from "./Step2.jsx";
@@ -8,7 +8,7 @@ import Step3 from "./Step3.jsx";
 import ProgressBar from "./ProgressBar.jsx";
 import { useContext } from "react";
 import { ScreenSizeContext } from "../../ScreenSizeContext.jsx";
-const MainForm = () => {
+const MainFormReferral = () => {
   const { isDesktop } = useContext(ScreenSizeContext);
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -44,7 +44,7 @@ const MainForm = () => {
         )}
       </div>
       <div className="formBox">
-        <ProgressBar currentStep={currentStep} />
+        <ProgressBar currentStep={currentStep} title1="Basic info" title2="Role & Experience" />
         {currentStep === 1 && (
           <Step1
             formData={formData}
@@ -65,4 +65,4 @@ const MainForm = () => {
   );
 };
 
-export default MainForm;
+export default MainFormReferral;
