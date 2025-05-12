@@ -21,14 +21,14 @@ const ProgressBar = ({ currentStep }) => {
             currentStep === 1 ? "active" : currentStep > 1 ? "visited" : ""
           }`}
         >
-          Fill your details
+          Basic info
         </span>
         <span
           className={`label ${
             currentStep === 2 ? "active" : currentStep > 2 ? "visited" : ""
           }`}
         >
-          Course selection
+          Role & Experience
         </span>
       </div>
     </div>

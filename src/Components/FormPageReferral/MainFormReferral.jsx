@@ -1,6 +1,6 @@
 import { useState } from "react";
 import LogoMH from "../../assets/MHLogo.svg";
-import FormMHGirl from "../../assets/FormImageGirl.svg";
+import partner from "../../assets/partner.svg";
 import "../../StylesOfComponents/FormPage/MainForm.css";
 import Step1 from "./Step1.jsx";
 import Step2 from "./Step2.jsx";
@@ -8,7 +8,7 @@ import Step3 from "./Step3.jsx";
 import ProgressBar from "./ProgressBar.jsx";
 import { useContext } from "react";
 import { ScreenSizeContext } from "../../ScreenSizeContext.jsx";
-const MainForm = () => {
+const MainFormReferral = () => {
   const { isDesktop } = useContext(ScreenSizeContext);
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -17,6 +17,9 @@ const MainForm = () => {
     email: "",
     course: "",
     experience: "",
+    companyName: "",
+    role: "",
+    skills: "",
   });
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -29,16 +32,16 @@ const MainForm = () => {
   };
 
   const goToStep3 = () => {
-    setCurrentStep(3); // Used after successful submission
+    setCurrentStep(3);
   };
 
   return (
     <div className="MainBox">
       <div className="greyBox">
         <img src={LogoMH} alt="CompanyLogo" className="LogoMH" />
-        <h3>Kick start your career with us!</h3>
+        <h3>Get free referral at top companies</h3>
         {isDesktop ? (
-          <img src={FormMHGirl} alt="Image" className="FormMHGirl" />
+          <img src={partner} alt="Image" className="FormMHGirl" />
         ) : (
           ""
         )}
@@ -65,4 +68,4 @@ const MainForm = () => {
   );
 };
 
-export default MainForm;
+export default MainFormReferral;

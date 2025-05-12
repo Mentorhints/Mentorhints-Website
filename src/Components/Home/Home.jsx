@@ -4,7 +4,6 @@ import graduation from "../../assets/GraduationCap.svg";
 import handshake from "../../assets/Handshake (1).svg";
 import shield from "../../assets/ShieldCheck (1).svg";
 import imagebox from "../../assets/Image Boxes.svg";
-import arrow from "../../assets/Arrow 1.svg";
 import Amazon from "../../assets/Amazon.svg";
 import Apple from "../../assets/Apple.svg";
 import Google from "../../assets/Google.svg";
@@ -17,6 +16,9 @@ const Home = () => {
   const navigate = useNavigate();
   const handleBookDemo = () => {
     navigate("/form"); // Navigate to the form page when the button is clicked
+  };
+  const handleBookReferral = () => {
+    navigate("/referralform"); // Navigate to the form page when the button is clicked
   };
   return (
     <div className="home-container">
@@ -59,7 +61,9 @@ const Home = () => {
             <button className="join-course" onClick={handleBookDemo}>
               Join Course
             </button>
-            <button className="join-course"> Get Referral</button>
+            <button className="join-course" onClick={handleBookReferral}>
+              Get Referral
+            </button>
           </div>
         </div>
 
