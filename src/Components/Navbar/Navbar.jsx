@@ -20,6 +20,9 @@ const Navbar = () => {
 
   const flattenedCourses = courseData.flatMap((group) => group.courses);
 
+  const handleBookDemo = () => {
+    navigate("/form"); // Navigate to the form page when the button is clicked
+  };
   const handleSearch = (e) => {
     const term = e.target.value.toLowerCase();
     setSearchTerm(term);
@@ -90,7 +93,7 @@ const Navbar = () => {
             </div>
           )}
         </div>
-        <button>Book a Demo</button>
+        <button onClick={handleBookDemo}>Book a Demo</button>
       </div>
     </div>
   );

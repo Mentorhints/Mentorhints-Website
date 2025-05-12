@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Courses from "./Pages/CoursesPage";
 import RootComponent from "./Pages/RootComponent";
 import MainPage from "./Pages/MainPage";
+import MainForm from "./Components/FormPage/MainForm";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/courses/:courseId",
         element: <Courses />,
+      },
+      {
+        path: "/form",
+        element: <MainForm />,
       },
     ],
   },

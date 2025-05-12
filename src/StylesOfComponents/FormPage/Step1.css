@@ -145,6 +145,10 @@ width: 100%;
 align-self: baseline;
 text-wrap: nowrap;
 }
+.input-box:focus-within,.otp-box:focus-within{
+  border-radius: 6px;
+border: 2px solid var(--Blue-blue---600, #0050B8);
+}
 
 @media screen and (max-width: 730px) {
   .form-group{
