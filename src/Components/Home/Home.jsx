@@ -17,9 +17,11 @@ const Home = () => {
   const handleBookDemo = () => {
     navigate("/form"); // Navigate to the form page when the button is clicked
   };
-  const handleBookReferral = () => {
-    navigate("/referralform"); // Navigate to the form page when the button is clicked
+
+  const handleReferral = () => {
+    navigate("/formreferral");
   };
+
   return (
     <div className="home-container">
       <div className="home-content">
@@ -61,7 +63,8 @@ const Home = () => {
             <button className="join-course" onClick={handleBookDemo}>
               Join Course
             </button>
-            <button className="join-course" onClick={handleBookReferral}>
+
+            <button className="join-course" onClick={handleReferral}>
               Get Referral
             </button>
           </div>

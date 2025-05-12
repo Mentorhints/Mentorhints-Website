@@ -3,24 +3,6 @@ import "../../StylesOfComponents/FormPage/Step2.css";
 import { useState } from "react";
 
 const Step2 = ({ formData, handleChange, onSubmitSuccess }) => {
-  const [emailError, setEmailError] = useState("");
-
-  const handleChangeonMail = (e) => {
-    const value = e.target.value;
-
-    // Use the handleChange function from props to update the formData state
-    handleChange(e);
-
-    // Validate on each change
-    if (!value) {
-      setEmailError("Email is required");
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-      setEmailError("Please enter a valid email address");
-    } else {
-      setEmailError(""); // Clear error if valid
-    }
-  };
-
   const isAllFilled = formData.email && formData.course && formData.experience;
   const handleSubmit = async (e) => {
     e.preventDefault();

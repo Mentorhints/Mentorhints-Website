@@ -8,7 +8,7 @@ const Step1 = ({ onContinue, formData, handleChange }) => {
   const [message, setMessage] = useState("");
   const [messageColor, setMessageColor] = useState("red");
   const otpRefs = useRef([]);
-  const [errors, setErrors] = useState({ name: "", mobile: "" });
+  const [errors, setErrors] = useState({ name: "", mobile: "" ,email:""});
 const [otpVerified, setOtpVerified] = useState(false);
 const [resendTimer, setResendTimer] = useState(10);
 const [showResend, setShowResend] = useState(false);
@@ -43,6 +43,16 @@ const validateMobile = (mobile) => {
     setErrors(prev => ({ ...prev, mobile: "" }));
   }
 };
+const validateEmail=(value)=>{
+  if (!value) {
+    setErrors(prev => ({ ...prev, email: "Email is required" }));
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+      setErrors(prev => ({ ...prev, email: "Please enter a valid email address" }));
+    } else {
+      setErrors(prev => ({ ...prev, email: "" }));
+      setErrors(""); // Clear error if valid
+    }
+}
 
   useEffect(() => {
     const isValidMobile = /^\d{10}$/.test(formData.mobile);
@@ -143,9 +153,29 @@ const verifyOTP = () => {
           />
         </div>
       </div>
+      <div className="form-group" style={{ top: 100 }}>
+        <label className="form-label">Email ID</label>
+        <div className="input-box">
+          <input
+            type="text"
+            name="email"
+            className="text-input"
+            placeholder="Enter your email Id"
+            value={formData.email}
+           onChange={(e) => {
+    handleChange(e);
+    validateEmail(e.target.value);
+  }}style={{
+            borderColor: errors.email ? "#D42E1B" : "#e6e6e8",
+            outline: "none",
+          }}
+          />
+        </div>
+      </div>
+      
 
       {/* Mobile Number Field */}
-      <div className="form-group" style={{ top: 100 }}>
+      <div className="form-group" style={{ top: 200 }}>
         <label className="form-label">Mobile number</label>
         <div className="input-box">
           <input
@@ -171,7 +201,7 @@ const verifyOTP = () => {
       </div>
 
       {/* OTP Inputs */}
-      <div className="form-group" style={{ top: 200 }}>
+      <div className="form-group" style={{ top: 300 }}>
         <label className="form-label">OTP Verification</label>
         <div className="otp-container">
           {otp.map((digit, index) => (
@@ -216,7 +246,11 @@ const verifyOTP = () => {
     {canResend ? "Resend OTP" : `Resend in ${resendTimer}s`}
   </button>
 )}
-
+        {errors.email && <div className="error-text" style={{
+            color: "red",
+            fontSize:"12px",
+            textAlign: "left",
+          }}>{errors.email}</div>}
         {errors.name && <div className="error-text" style={{
             color: "red",
             fontSize:"12px",
@@ -243,7 +277,7 @@ const verifyOTP = () => {
       </div>
 
 
-     <div className="continue-button" style={{ top: 332 }}>
+     <div className="continue-button" style={{ top: 432 }}>
   <span
     onClick={() => {
       if (otpVerified) onContinue();

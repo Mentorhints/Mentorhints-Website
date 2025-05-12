@@ -1,11 +1,11 @@
-import React from "react";
-
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Courses from "./Pages/CoursesPage";
 import RootComponent from "./Pages/RootComponent";
 import MainPage from "./Pages/MainPage";
 import MainForm from "./Components/FormPage/MainForm";
-import MainFormReferral from "./Components/FormPageReferral/MainFormReferral";
+
+import MainFormReferral from "./Components/FormPageReferral/MainForm";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         element: <MainForm />,
       },
       {
-        path: "/referralform",
+        path: "/formreferral",
         element: <MainFormReferral />,
       },
     ],
