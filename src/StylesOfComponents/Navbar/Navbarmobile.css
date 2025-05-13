@@ -1,217 +1,219 @@
 .sidebar-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  
-  .sidebar-header {
-    align-self: stretch;
-    height: 57px;
-    padding: 12px 20px;
-    background: #fdfdff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 
-  }
-  
-  .sidebar-logo {
-    /* width: 114px;
+.sidebar-header {
+  align-self: stretch;
+  height: 57px;
+  padding: 12px 20px;
+  background: #fdfdff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.sidebar-logo {
+  /* width: 114px;
     height: 33px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5px;
-  }
-  
-  .logo-icon {
-    width: 22.79px;
-    height: 22.92px;
-    position: relative;
-  }
-  
-  .logo-text {
-    color: black;
-    font-size: 13.73px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.14px;
-  }
-  
-  .close-icon {
-    width: 24px;
-    height: 24px;
-    position: relative;
-  }
-  
-  .close-box {
-    width: 15px;
-    height: 15px;
-    left: 4.5px;
-    /* top: 4.5px; */
-    position: absolute;
-  }
-  /* Inside your main CSS (Navbarmobile.css maybe) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5px;
+}
+
+.logo-icon {
+  width: 22.79px;
+  height: 22.92px;
+  position: relative;
+}
+
+.logo-text {
+  color: black;
+  font-size: 13.73px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.14px;
+}
+
+.close-icon {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.searchbarmobile {
+  margin-left: auto;
+  margin-right: 16px;
+  margin-top: 2px;
+}
+.close-box {
+  width: 15px;
+  height: 15px;
+  left: 4.5px;
+  /* top: 4.5px; */
+  position: absolute;
+}
+/* Inside your main CSS (Navbarmobile.css maybe) */
 .no-scroll {
   overflow: hidden;
 }
 
-  .sidebar-content {
-    /* text-align: right; */
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    align-items: flex-end;
-    overflow-y: hidden;
-  }
-  
-  .menu-section {
-    align-self: stretch;
-    background: #fdfdff;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .menu-header {
-    padding: 8px 12px;
-    background: #fdfdff;
-    display: flex;
-    /* align-self: flex-end; */
-    justify-content: flex-start;
-    /* align-items: flex-end; */
-    gap: 7px;
-  }
-  
-  .menu-icon {
-    width: 27px;
-    height: 24px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .icon-outline {
-    width: 18.2px;
-    height: 15.97px;
-    left: 2.9px;
-    top: 4px;
-    position: absolute;
-    /* outline: 1.5px #eb640c solid; */
-    outline-offset: -0.75px;
-  }
-  
-  .menu-title {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    
-    text-align: left;
-    gap: 6px;
-    font-size: 16px;
-    font-family: "Satoshi", sans-serif;
-    font-weight: 500;
-    color: #39393d;
-  padding-right:8px;
+.sidebar-content {
+  /* text-align: right; */
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: flex-end;
+  overflow-y: hidden;
+}
+
+.menu-section {
+  align-self: stretch;
+  background: #fdfdff;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-header {
+  padding: 8px 12px;
+  background: #fdfdff;
+  display: flex;
+  /* align-self: flex-end; */
+  justify-content: flex-start;
+  /* align-items: flex-end; */
+  gap: 7px;
+}
+
+.menu-icon {
+  width: 27px;
+  height: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-outline {
+  width: 18.2px;
+  height: 15.97px;
+  left: 2.9px;
+  top: 4px;
+  position: absolute;
+  /* outline: 1.5px #eb640c solid; */
+  outline-offset: -0.75px;
+}
+
+.menu-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  text-align: left;
+  gap: 6px;
+  font-size: 16px;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 500;
+  color: #39393d;
+  padding-right: 8px;
   width: 100%;
   position: relative;
-  }
-  
-  .chevron-up {
-    width: 16px;
-    height: 16px;
-    top:5.5px;
-    right: 10px;
-    position:absolute;
-    overflow: hidden;
-    display: grid;
-    place-items: center;
-  }
-  
-  .chevron-outline {
-    width: 8px;
-    height: 4px;
-    /* left: 12px;
+}
+
+.chevron-up {
+  width: 16px;
+  height: 16px;
+  top: 5.5px;
+  right: 10px;
+  position: absolute;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.chevron-outline {
+  width: 8px;
+  height: 4px;
+  /* left: 12px;
     top: 11.2px; */
-    position: absolute;
-    transform: rotate(180deg);
-    transform-origin: top left;
-    outline: 1.33px #39393d solid;
-    outline-offset: -0.67px;
-  }
-  
-  .menu-list {
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .menu-divider {
-    align-self: stretch;
-    height: 0;
-    outline: 0.0px #b4b4b5a4 solid;
-    outline-offset: -0.5px;
-    width: 100vw;
-  }
-  
-  .menu-item {
-    /* width: 100%; */
-    /* justify-self:flex-end; */
-    height: 48px;
-    padding: 12px 8px;
-    border-radius: 4px;
-    /* outline: 1px #fdfdff solid; */
-    outline-offset: -1px;
-    display: flex;
-    align-items: center;
-    /* align-items: flex-end; */
-    gap: 8px;
-  }
-  
-  .menu-item-icon {
-    width: 28px;
-    height: 28px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .icon-filled {
-    width: 21px;
-    height: 21px;
-    left: 1.5px;
-    top: 1.5px;
-    position: absolute;
-    /* background: #0050b8; */
-  }
-  
-  .menu-item-text {
-    font-size: 16px;
-    font-family: "Satoshi", sans-serif;
-    font-weight: 400;
-    color: #08080c;
-    /* text-align: right; */
-    flex-grow: 1;
-    padding-left:10px;
-  }
-  .menu-item-text a{
-    color: #08080c;
-    text-decoration: none;
-  }
-  .sidebar-links {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .sidebar-link {
-    padding: 8px 12px;
-    background: #fdfdff;
-    font-size: 16px;
-    font-family: "Satoshi", sans-serif;
-    font-weight: 500;
-    color: #39393d;
-    /* text-align: right; */
-    padding-right:20px;
-  }
-  
+  position: absolute;
+  transform: rotate(180deg);
+  transform-origin: top left;
+  outline: 1.33px #39393d solid;
+  outline-offset: -0.67px;
+}
+
+.menu-list {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-divider {
+  align-self: stretch;
+  height: 0;
+  outline: 0px #b4b4b5a4 solid;
+  outline-offset: -0.5px;
+  width: 100vw;
+}
+
+.menu-item {
+  /* width: 100%; */
+  /* justify-self:flex-end; */
+  height: 48px;
+  padding: 12px 8px;
+  border-radius: 4px;
+  /* outline: 1px #fdfdff solid; */
+  outline-offset: -1px;
+  display: flex;
+  align-items: center;
+  /* align-items: flex-end; */
+  gap: 8px;
+}
+
+.menu-item-icon {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-filled {
+  width: 21px;
+  height: 21px;
+  left: 1.5px;
+  top: 1.5px;
+  position: absolute;
+  /* background: #0050b8; */
+}
+
+.menu-item-text {
+  font-size: 16px;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  color: #08080c;
+  /* text-align: right; */
+  flex-grow: 1;
+  padding-left: 10px;
+}
+.menu-item-text a {
+  color: #08080c;
+  text-decoration: none;
+}
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-link {
+  padding: 8px 12px;
+  background: #fdfdff;
+  font-size: 16px;
+  font-family: "Satoshi", sans-serif;
+  font-weight: 500;
+  color: #39393d;
+  /* text-align: right; */
+  padding-right: 20px;
+}
