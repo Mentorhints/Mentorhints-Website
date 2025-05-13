@@ -1,4 +1,3 @@
-import React from "react";
 import { courseInfo } from "./CourseData.js";
 import "../../StylesOfComponents/CourseHero/Coursehero.css";
 import line from "../../assets/Line.svg";
@@ -6,9 +5,18 @@ import lineMobile from "../../assets/LineMobile.svg";
 import ellipseforCourse from "../../assets/EllipseforCourse.svg";
 import { useContext } from "react";
 import { ScreenSizeContext } from "../../ScreenSizeContext.jsx";
-
+import { useNavigate } from "react-router-dom";
 const CourseHero = ({ courseName, courseImage, courseDescription }) => {
   const { isDesktop } = useContext(ScreenSizeContext);
+  const navigate = useNavigate();
+
+  const handleEnrollClick = () => {
+    navigate("/form", {
+      state: {
+        courseName,
+      },
+    });
+  };
   return (
     <>
       <div className="TestingAutomation">
@@ -24,7 +32,9 @@ const CourseHero = ({ courseName, courseImage, courseDescription }) => {
           <p>Courses &gt; {courseName}</p>
           <h3>{courseName}</h3>
           <p>{courseDescription}</p>
-          <button className="CourseEnrollbtn">Enroll Now</button>
+          <button className="CourseEnrollbtn" onClick={handleEnrollClick}>
+            Enroll Now
+          </button>
         </div>
         {isDesktop ? (
           <div className="HeroImgdiv">

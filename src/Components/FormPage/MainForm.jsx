@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LogoMH from "../../assets/MHLogo.svg";
 import FormMHGirl from "../../assets/FormImageGirl.svg";
 import "../../StylesOfComponents/FormPage/MainForm.css";
@@ -8,9 +8,11 @@ import Step3 from "./Step3.jsx";
 import ProgressBar from "./ProgressBar.jsx";
 import { useContext } from "react";
 import { ScreenSizeContext } from "../../ScreenSizeContext.jsx";
+import { useLocation } from "react-router-dom";
 const MainForm = () => {
   const { isDesktop } = useContext(ScreenSizeContext);
   const [currentStep, setCurrentStep] = useState(1);
+  const location = useLocation();
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",
@@ -18,6 +20,15 @@ const MainForm = () => {
     course: "",
     experience: "",
   });
+  useEffect(() => {
+    // If courseName is passed from CourseHero, set it
+    if (location.state?.courseName) {
+      setFormData((prev) => ({
+        ...prev,
+        course: location.state.courseName,
+      }));
+    }
+  }, [location.state]);
   const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
@@ -44,7 +55,11 @@ const MainForm = () => {
         )}
       </div>
       <div className="formBox">
-        <ProgressBar currentStep={currentStep} title1="Fill your details" title2="Course selection"/>
+        <ProgressBar
+          currentStep={currentStep}
+          title1="Fill your details"
+          title2="Course selection"
+        />
         {currentStep === 1 && (
           <Step1
             formData={formData}

@@ -26,6 +26,9 @@
   background: var(--Neutrals-neutral---50, #f5f5f7);
   font-size: 16px;
 }
+.extrastyle {
+  height: 80px;
+}
 .FormInputBox:focus-visible,
 .scrollable-select:hover,
 .simple-select:hover {
@@ -47,6 +50,7 @@
   letter-spacing: 0.28px;
   margin-top: 44px;
   margin-bottom: 128px;
+  cursor: pointer;
 }
 .register-btn.btn-active {
   background: var(--Blue-blue---600, #0050b8);

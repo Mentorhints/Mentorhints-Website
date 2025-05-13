@@ -1,50 +1,35 @@
-import DropdownSelect from "./DropDownSelect.jsx"; // Import the new DropdownSelect component
 import "../../StylesOfComponents/FormPage/Step2.css";
-import { useState } from "react";
 
-const Step2 = ({ formData, handleChange, onSubmitSuccess }) => {
-  const isAllFilled = formData.email && formData.course && formData.experience;
+const Step2 = ({ formData, onSubmitSuccess, handleChange }) => {
+  const isAllFilled =
+    formData.companyName &&
+    formData.role &&
+    formData.experience &&
+    formData.skills;
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Log form data before making the request to see what's being sent
+    console.log("Form Data:", formData);
+
     try {
       const response = await fetch(
-        "https://test.mentorhints.com/submit_form.php",
+        "https://test.mentorhints.com/referral_form.php",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(formData), // Send form data as JSON
         }
       );
 
-      // Ensure the response body is consumed only once
-      const rawResponse = await response.text(); // Get the raw text first
-      console.log("Raw Response Text: ", rawResponse);
+      const result = await response.json(); // Parse the JSON response here
 
-      // Check if response is ok
-      if (!response.ok) {
-        console.error("Server responded with error:", rawResponse);
-        alert("Server error. Please try again.");
-        return;
-      }
-
-      // Now try parsing the JSON only once
-      let result;
-      try {
-        result = JSON.parse(rawResponse); // Parse the raw response text into JSON
-      } catch (err) {
-        console.error("Failed to parse response as JSON", err);
-        alert("Failed to parse response. Please try again later.");
-        return;
-      }
-
-      // Handle the result
       if (result.success) {
         onSubmitSuccess(); // Go to Step 3
       } else {
-        alert("Submission failed: " + result.message);
+        alert("Submission failed: " + result.message); // Display server message
       }
     } catch (error) {
       console.error("Fetch error:", error);
@@ -54,52 +39,51 @@ const Step2 = ({ formData, handleChange, onSubmitSuccess }) => {
 
   return (
     <form className="form-container-s2" onSubmit={handleSubmit}>
-      <DropdownSelect
-        label="Course"
-        name="course"
-        placeholder="Select your course"
-        options={[
-          "Backend Development",
-          "Frontend Development",
-          "UI/UX",
-          "Data Analyst",
-          "AI Development",
-          "Data Science",
-          "Testing Automation",
-        ]}
-        formData={formData}
-        handleChange={handleChange}
-      />
-
       <div className="form-group-s2">
-        <label className="FormDataLabel">Email ID</label>
+        <label className="FormDataLabel">Current employment</label>
         <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChangeonMail}
-          placeholder="Enter your email id"
+          type="text"
+          name="companyName"
+          value={formData.companyName}
+          onChange={handleChange}
+          placeholder="Enter your company name"
           className="FormInputBox"
-          style={{
-            borderColor: emailError ? "#D42E1B" : "#e6e6e8",
-            outline: "none",
-          }}
+        />
+      </div>
+      <div className="form-group-s2">
+        <label className="FormDataLabel">Role</label>
+        <input
+          type="text"
+          name="role"
+          value={formData.role}
+          onChange={handleChange}
+          placeholder="Enter your role"
+          className="FormInputBox"
+        />
+      </div>
+      <div className="form-group-s2">
+        <label className="FormDataLabel">Total experience</label>
+        <input
+          type="text"
+          name="experience"
+          value={formData.experience}
+          onChange={handleChange}
+          placeholder="Enter your experience in years"
+          className="FormInputBox"
+        />
+      </div>
+      <div className="form-group-s2">
+        <label className="FormDataLabel">Skills</label>
+        <textarea
+          type="text"
+          name="skills"
+          value={formData.skills}
+          onChange={handleChange}
+          placeholder="Enter your skills"
+          className="FormInputBox extrastyle"
         />
       </div>
 
-      <DropdownSelect
-        label="I'm"
-        name="experience"
-        placeholder="Select your experience level"
-        options={["Student", "Fresher", "Experience"]}
-        formData={formData}
-        handleChange={handleChange}
-      />
-      {emailError && (
-        <div style={{ color: "#D42E1B", fontSize: "12px", marginTop: "4px" }}>
-          {emailError}
-        </div>
-      )}
       <button
         type="submit"
         disabled={!isAllFilled}

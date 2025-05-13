@@ -47,7 +47,12 @@ const Navbar = () => {
 
   return (
     <div className="Navbar">
-      <img src={MHLogo} alt="logo" />
+      <img
+        src={MHLogo}
+        alt="logo"
+        onClick={() => navigate("/")}
+        style={{ cursor: "pointer" }}
+      />
       <div className="NavStack">
         <a onClick={handleToggle}>
           <img src={hat} alt="" className="hatgraduation" />

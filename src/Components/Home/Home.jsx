@@ -19,7 +19,7 @@ const Home = () => {
   };
 
   const handleReferral = () => {
-    navigate("/formreferral");
+    navigate("/referralform");
   };
 
   return (
@@ -62,10 +62,6 @@ const Home = () => {
           <div className="home-buttons">
             <button className="join-course" onClick={handleBookDemo}>
               Join Course
-            </button>
-
-            <button className="join-course" onClick={handleReferral}>
-              Get Referral
             </button>
           </div>
         </div>

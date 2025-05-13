@@ -3,8 +3,7 @@ import Courses from "./Pages/CoursesPage";
 import RootComponent from "./Pages/RootComponent";
 import MainPage from "./Pages/MainPage";
 import MainForm from "./Components/FormPage/MainForm";
-
-import MainFormReferral from "./Components/FormPageReferral/MainForm";
+import MainFormReferral from "./Components/FormPageReferral/MainFormReferral";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +23,7 @@ const router = createBrowserRouter([
         element: <MainForm />,
       },
       {
-        path: "/formreferral",
+        path: "/referralform",
         element: <MainFormReferral />,
       },
     ],

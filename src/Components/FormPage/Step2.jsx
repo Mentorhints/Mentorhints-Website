@@ -76,6 +76,7 @@ const Step2 = ({ formData, handleChange, onSubmitSuccess }) => {
         label="Course"
         name="course"
         placeholder="Select your course"
+        readOnly
         options={[
           "Backend Development",
           "Frontend Development",
