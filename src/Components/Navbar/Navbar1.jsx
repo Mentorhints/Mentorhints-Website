@@ -67,17 +67,17 @@ const SidebarMenu = () => {
             <div className="menu-section">
               <div className="menu-header" onClick={toggleDropdown}>
                 <div className="menu-icon">
-                  <img src={graduation} alt="" />
+                  {!isDropdownOpen &&<img src={graduation} alt="" />}
                   <div className="icon-outline"></div>
                 </div>
                 <div className="menu-title">
-                  Courses
-                  <div className="chevron-up">
+                  {isDropdownOpen ?"Back":"Courses"}
+                  <div className="chevron-up" style={{left:isDropdownOpen ?"-30px":"",right:isDropdownOpen?"":"10px"}}>
                     <motion.img
                       src={Chevron}
                       alt=""
                       animate={{
-                        rotate: isDropdownOpen ? 180 : 0,
+                        rotate: isDropdownOpen ? 270 : 90,
                       }}
                       transition={{ duration: 0.3 }}
                     />
@@ -126,13 +126,15 @@ const SidebarMenu = () => {
               </AnimatePresence>
             </div>
             <div className="menu-divider"></div>
+            {!isDropdownOpen && 
             <div className="sidebar-links">
               <div className="sidebar-link">For Referral</div>
               <div className="menu-divider"></div>
               <div className="sidebar-link">Blogs</div>
               <div className="menu-divider"></div>
               <div className="sidebar-link">About</div>
-            </div>
+            </div>}
+            
           </motion.div>
         )}
       </AnimatePresence>
