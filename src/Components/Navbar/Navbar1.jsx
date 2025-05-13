@@ -100,7 +100,7 @@ const SidebarMenu = () => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             exit={{ y: -100 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.0 }}
           >
             <div className="searchbar">
               <input
@@ -137,7 +137,7 @@ const SidebarMenu = () => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             exit={{ y: -100 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.0 }}
           >
             <div className="menu-section">
               <div className="menu-header" onClick={toggleDropdown}>
@@ -173,7 +173,7 @@ const SidebarMenu = () => {
                     initial={{ height: 0 }}
                     animate={{ height: "auto" }}
                     exit={{ height: 0 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.0 }}
                   >
                     {/* Menu Items */}
                     {[
