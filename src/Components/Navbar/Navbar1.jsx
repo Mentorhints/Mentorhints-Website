@@ -160,7 +160,7 @@ const SidebarMenu = () => {
                       animate={{
                         rotate: isDropdownOpen ? 270 : 90,
                       }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.0 }}
                     />
                   </div>
                 </div>
