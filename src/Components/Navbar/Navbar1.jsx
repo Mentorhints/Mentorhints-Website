@@ -83,7 +83,7 @@ const SidebarMenu = () => {
             toggleMenu;
           }}
         >
-          <img src={isSearchOpen ? navicon1 : searchicon} alt="" />
+          <img src={isSearchOpen ? navicon1 : searchicon} alt=""  style={{position:"relative",right:isSearchOpen?"0px":""}}/>
         </div>
         {!isSearchOpen && (
           <div className="close-icon">
@@ -101,8 +101,9 @@ const SidebarMenu = () => {
             animate={{ y: 0 }}
             exit={{ y: -100 }}
             transition={{ duration: 0.0 }}
+            style={{display:"grid",placeItems:"center"}}
           >
-            <div className="searchbar">
+            <div className="searchbar" style={{width:"90%"}} >
               <input
                 type="text"
                 placeholder="Search Course"
