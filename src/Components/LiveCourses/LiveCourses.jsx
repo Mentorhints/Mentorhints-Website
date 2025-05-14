@@ -3,6 +3,9 @@ import CodeBrowser from "../../assets/code-browser.svg";
 import Database02 from "../../assets/database-02.svg";
 import LineChartUp02 from "../../assets/line-chart-up-02.svg";
 import Search from "../../assets/search.svg";
+import testing from "../../assets/Icon.svg"
+import datascience from "../../assets/atom-03.svg"
+import ai from "../../assets/sparks.svg"
 
 import Server02 from "../../assets/server-02.svg";
 import "../../StylesOfComponents/LiveCourses/LiveCourses.css";
@@ -49,6 +52,27 @@ const courses = [
       skills: ["UX Design", "Figma", "Adobe XD"],
       buttonText: "View Course",
     },
+      {
+    icon:testing,
+    title:"Testing Automation",
+    skills:["Selenium","TestNG","Jenkins"],
+    iconBgColor:"#E6F0FE",
+    buttonText: "View Course",
+ },
+ {
+    icon:datascience,
+    title:"Python with Datascience",
+    skills:["Python","NumPy","Seaborn"],
+    iconBgColor:"#FDEBE9",
+    buttonText: "View Course",
+ },
+ {
+    icon:ai,
+    title:"AI Development",
+    skills:["Python","Machine learning","Deep learning"],
+    iconBgColor:"#F5E8FC",
+    buttonText: "View Course",
+ }
   ];
 
  const LiveCourses = () => {
