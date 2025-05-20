@@ -1,14 +1,55 @@
 import React, { useState, useEffect, Fragment } from "react";
+import { useLocation } from "react-router-dom";
 import "../../StylesOfComponents/CourseCurriculum/CourseCurriculum.css";
 import downarrow from "../../assets/DownArrowBlack.svg";
 import rightarrow from "../../assets/right-arrow_orange.svg";
 import blackright from "../../assets/right-arrow_svgrepo.svg";
-import { topicWiseCurriculum } from "./data.js";
 import { motion, useAnimation } from "framer-motion";
 import { useRef } from "react";
+import {frontend, UIUX,fullstack,AI,backend} from "./data";
+// const topicWiseCurriculum=UIUX;
 
+
+// const getCurriculumFromPath = () => {
+//   const path = location.pathname.toLowerCase();
+
+//   if (path.includes("frontend")) return frontend;
+//   if (path.includes("backend")) return backend;
+//   if (path.includes("full-stack")) return fullstack;
+//   if (path.includes("uiux")) return UIUX;
+//   if (path.includes("ai")) return AI;
+//   if (path.includes("dataAnalyst")) return AI;
+
+//   // Default fallback
+//   return frontend;
+// };
+
+// const topicWiseCurriculum = getCurriculumFromPath();
 const CourseCurriculum = () => {
-  const [selectedMainTopic, setSelectedMainTopic] = useState("Python");
+  const location = useLocation();
+
+const getCurriculumFromPath = (path) => {
+  path = path.toLowerCase();
+  if (path.includes("frontend")) return frontend;
+  if (path.includes("backend")) return backend;
+  if (path.includes("full-stack")) return fullstack;
+  if (path.includes("uiux")) return UIUX;
+  if (path.includes("ai")) return AI;
+  if (path.includes("dataanalyst")) return AI;
+
+  // Default fallback
+  return frontend;
+};
+
+const [topicWiseCurriculum, setTopicWiseCurriculum] = useState(getCurriculumFromPath(location.pathname));
+useEffect(() => {
+  const newCurriculum = getCurriculumFromPath(location.pathname);
+  setTopicWiseCurriculum(newCurriculum);
+  setSelectedMainTopic(Object.keys(newCurriculum)[0]);
+  setSelectedId(1);
+}, [location.pathname]);
+
+  const [selectedMainTopic, setSelectedMainTopic] = useState(Object.keys(topicWiseCurriculum)[0]);
   const [selectedId, setSelectedId] = useState(1);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const scrollRef = useRef();
@@ -225,9 +266,9 @@ const CourseCurriculum = () => {
         )}
       </div>
 
-      <div className="ButCon">
+      {/* <div className="ButCon">
         <div className="But">Download Syllabus</div>
-      </div>
+      </div> */}
     </div>
   );
 };
