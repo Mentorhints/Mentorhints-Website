@@ -23,17 +23,16 @@
   justify-content: flex-end;
 }
 
-.HeroImgdiv img {
+/* .HeroImgdiv img {
   object-fit: cover;
   /* Blending Fix */
-  z-index: 2;
+/* z-index: 2;
   mask-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0) 0%,
     black 50%
-  ); /* Ensures Image Blends with Background */
-  mix-blend-mode: screen;
-}
+  ); Ensures Image Blends with Background */
+/* mix-blend-mode: screen;} */
 
 /* Course Info Section */
 .courseInfoBox {
@@ -137,6 +136,7 @@
   font-weight: 400;
   line-height: 20px; /* 125% */
   letter-spacing: 0.28px;
+  width: 325px;
 }
 .textdet button {
   display: flex;

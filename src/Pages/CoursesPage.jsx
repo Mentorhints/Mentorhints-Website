@@ -20,9 +20,9 @@ const Courses = () => {
         courseImage={course.image}
         courseDescription={course.description}
       />
-      <CourseDetail  courseName={course.name}/>
+      <CourseDetail courseName={course.name} />
       <CourseCurriculum />
-      <CardComponent />
+      <CardComponent courseKey={course.courseKey} />
       <Container />
       <CourseCertificate />
       <Faq />

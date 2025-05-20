@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "../../StylesOfComponents/Navbar/Navbarmobile.css";
-import backend from "../../assets/Backend.svg";
+
 import Chevron from "../../assets/Chevron.svg";
-import dataAnalsts from "../../assets/Data analyst.svg";
-import frontend from "../../assets/Frontend.svg";
-import fullstack from "../../assets/Fullstack.svg";
+
 import graduation from "../../assets/graduation-hat-01.svg";
 import navicon from "../../assets/Nav icon set (1).svg";
 import navicon1 from "../../assets/Nav icon set.svg";
 import setting from "../../assets/settings.svg";
+import AI from "../../assets/sparks.svg";
 import uiux from "../../assets/UIUX.svg";
+import dataAnalsts from "../../assets/Data analyst.svg";
+import frontend from "../../assets/Frontend.svg";
+import fullstack from "../../assets/Fullstack.svg";
+import backend from "../../assets/Backend.svg";
 import logo from "../../assets/Logo (1).svg";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -83,7 +86,11 @@ const SidebarMenu = () => {
             toggleMenu;
           }}
         >
-          <img src={isSearchOpen ? navicon1 : searchicon} alt=""  style={{position:"relative",right:isSearchOpen?"0px":""}}/>
+          <img
+            src={isSearchOpen ? navicon1 : searchicon}
+            alt=""
+            style={{ position: "relative", right: isSearchOpen ? "0px" : "" }}
+          />
         </div>
         {!isSearchOpen && (
           <div className="close-icon">
@@ -101,9 +108,9 @@ const SidebarMenu = () => {
             animate={{ y: 0 }}
             exit={{ y: -100 }}
             transition={{ duration: 0.0 }}
-            style={{display:"grid",placeItems:"center"}}
+            style={{ display: "grid", placeItems: "center" }}
           >
-            <div className="searchbar" style={{width:"90%"}} >
+            <div className="searchbar" style={{ width: "90%" }}>
               <input
                 type="text"
                 placeholder="Search Course"
@@ -181,30 +188,33 @@ const SidebarMenu = () => {
                       {
                         icon: fullstack,
                         label: "Full-stack Development",
-                        path: "",
+                        path: "/courses/full-stack",
                       },
                       {
                         icon: frontend,
                         label: "Frontend Development",
-                        path: "",
+                        path: "/courses/frontend",
                       },
-                      { icon: backend, label: "Backend Development", path: "" },
                       {
-                        icon: dataAnalsts,
-                        label: "Python with DataScience",
-                        path: "/courses/python",
+                        icon: backend,
+                        label: "Backend Development",
+                        path: "/courses/backend",
                       },
-                      // { icon: dataAnalsts, label: "Data Analyst",path:"/courses/python" },
-                      // { icon: uiux, label: "UI/UX Design" ,path:"/courses/aiml"},
+
                       {
                         icon: uiux,
-                        label: "AI Development",
-                        path: "/courses/aiml",
+                        label: "UI/UX Design",
+                        path: "/courses/uiux",
                       },
                       {
-                        icon: setting,
-                        label: "Testing Automation",
-                        path: "/courses/testing-automation",
+                        icon: dataAnalsts,
+                        label: "Data Analyst",
+                        path: "/courses/dataAnalyst",
+                      },
+                      {
+                        icon: AI,
+                        label: "AI Development",
+                        path: "/courses/aiml",
                       },
                     ].map(({ icon, label, path }, i) => (
                       <div key={i}>

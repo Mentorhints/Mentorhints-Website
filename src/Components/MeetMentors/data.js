@@ -6,6 +6,10 @@ import vengadesh from "../../assets/Venkatesh.svg";
 import google from "../../assets/LogoGoogle.svg";
 import Arun from "../../assets/Arun.svg";
 import mindgates from "../../assets/mindgates.svg";
+import Gokul from "../../assets/GokulMentor.svg";
+import Mohammed from "../../assets/Mohammed.svg";
+import mks_company from "../../assets/mks_company.svg";
+import Mphasis from "../../assets/mphasis_company.svg";
 
 export const MentorsList = [
   {
@@ -32,5 +36,17 @@ export const MentorsList = [
     name: "Venkadesh",
     designation: "Software Developer",
     Company: google,
+  },
+  {
+    image: Gokul,
+    name: "Gokul",
+    designation: "Tech Lead",
+    Company: mks_company,
+  },
+  {
+    image: Mohammed,
+    name: "Mohammed Amenuddin Illiaz",
+    designation: "Delivery Project Lead",
+    Company: Mphasis,
   },
 ];
