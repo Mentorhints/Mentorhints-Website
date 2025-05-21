@@ -47,7 +47,7 @@
   align-self: stretch;
 }
 .mainmentorbox {
-  min-height: 300px;
+  min-height: 320px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0px 2px 8px 0px rgba(99, 99, 99, 0.2);
@@ -112,7 +112,9 @@
   .mentorsofmh {
     width: 300px;
   }
-
+  .mainmentorbox {
+    min-height: 300px;
+  }
   .mentorheadingcourse p {
     text-align: center;
 

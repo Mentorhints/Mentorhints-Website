@@ -3,8 +3,8 @@ export const courseData = [
     menu: "Full Stack",
     courses: [
       {
-        name: "Full Stack Web Development",
-        courseId: "fullstack",
+        name: "Full Stack ",
+        courseId: "full-stack",
         keywords: ["fullstack", "web", "java", "react", "hibernate", "spring"],
       },
     ],
@@ -38,22 +38,39 @@ export const courseData = [
     ],
   },
   {
-    menu: "Python with Data Science",
+    menu: "Data Analyst",
     courses: [
       {
-        name: "Python with Data Science",
-        courseId: "python",
+        name: "Data Analyst",
+        courseId: "dataAnalyst",
         keywords: [
-          "python",
-          "data science",
-          "pandas",
-          "numpy",
+          "data analysis",
+          "SQL",
+          "Python",
+          "business intelligence",
+          "data visualization",
           "machine learning",
-          "statistics",
         ],
       },
     ],
   },
+  // {
+  //   menu: "Python with Data Science",
+  //   courses: [
+  //     {
+  //       name: "Python with Data Science",
+  //       courseId: "python",
+  //       keywords: [
+  //         "python",
+  //         "data science",
+  //         "pandas",
+  //         "numpy",
+  //         "machine learning",
+  //         "statistics",
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     menu: "AI Development",
     courses: [
@@ -70,23 +87,23 @@ export const courseData = [
       },
     ],
   },
-  {
-    menu: "Testing",
-    courses: [
-      {
-        name: "Software Testing",
-        courseId: "testing-automation",
-        keywords: [
-          "testing",
-          "manual testing",
-          "automation",
-          "selenium",
-          "jest",
-          "cypress",
-        ],
-      },
-    ],
-  },
+  // {
+  //   menu: "Testing",
+  //   courses: [
+  //     {
+  //       name: "Software Testing",
+  //       courseId: "testing-automation",
+  //       keywords: [
+  //         "testing",
+  //         "manual testing",
+  //         "automation",
+  //         "selenium",
+  //         "jest",
+  //         "cypress",
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     menu: "UI/UX",
     courses: [
