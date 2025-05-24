@@ -206,11 +206,11 @@ const SidebarMenu = () => {
                         label: "UI/UX Design",
                         path: "/courses/uiux",
                       },
-                      {
-                        icon: dataAnalsts,
-                        label: "Data Analyst",
-                        path: "/courses/dataAnalyst",
-                      },
+                      // {
+                      //   icon: dataAnalsts,
+                      //   label: "Data Analyst",
+                      //   path: "/courses/dataAnalyst",
+                      // },
                       {
                         icon: AI,
                         label: "AI Development",

@@ -650,7 +650,32 @@ export const backend={
             "Spring Boot basics","REST API creation","Pagination, sorting","Basic security setup"
           ]
         }
-  ]
+  ],
+  Frameworks: [
+  {
+    id: 1,
+    topic: "Spring Boot",
+    points: [
+      "What is Spring Boot?",
+      "Creating REST APIs",
+      "Project structure and annotations",
+      "Running and testing applications",
+      "Spring Boot with MySQL"
+    ]
+  },
+  {
+    id: 2,
+    topic: "Microservices",
+    points: [
+      "What are microservices?",
+      "Building small independent services",
+      "Connecting services using REST",
+      "Introduction to service discovery",
+      "Basic API Gateway concept"
+    ]
+  }
+]
+
 }
 
 export const frontend={
@@ -950,6 +975,30 @@ export const fullstack={
           ]
         }
   ],
+  Frameworks: [
+  {
+    id: 1,
+    topic: "Spring Boot",
+    points: [
+      "What is Spring Boot?",
+      "Creating REST APIs",
+      "Project structure and annotations",
+      "Running and testing applications",
+      "Spring Boot with MySQL"
+    ]
+  },
+  {
+    id: 2,
+    topic: "Microservices",
+    points: [
+      "What are microservices?",
+      "Building small independent services",
+      "Connecting services using REST",
+      "Introduction to service discovery",
+      "Basic API Gateway concept"
+    ]
+  }
+],
   WebDevelopmentBasics :[
         {
           id: 1,

@@ -21,9 +21,9 @@ const Courses = () => {
         courseDescription={course.description}
       />
       <CourseDetail courseName={course.name} />
-      <CourseCurriculum topicWiseCurriculum={course.data} />
+      <CourseCurriculum  />
       <CardComponent courseKey={course.courseKey} />
-      <Container />
+      <Container price={course.price} dupprice={course.dupPrice}/>
       <CourseCertificate />
       <Faq />
     </>

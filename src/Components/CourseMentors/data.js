@@ -22,7 +22,7 @@ export const cardofTesting = {
     prev_company: "Ex - Microsoft",
     skills: "Azure, Python",
     yearofexp: "14+ Years experience",
-    noOfstudents: "50+ Students",
+    noOfstudents: "15+ Students",
   },
   Gokul: {
     img: Gokul,

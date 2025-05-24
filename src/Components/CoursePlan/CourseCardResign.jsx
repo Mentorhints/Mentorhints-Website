@@ -3,7 +3,7 @@ import styles from "../../StylesOfComponents/CoursePlan/Container.module.css";
 import certificate from "../../assets/PlanCertificate.svg";
 import greentick from "../../assets/SlimTick.svg";
 
-export default function Container() {
+export default function Container({price,dupprice}) {
   return (
     <div className="con-con">
       <div className={styles.container}>
@@ -24,8 +24,8 @@ export default function Container() {
               </div>
               <div className={styles.pack}>
               <div className={styles.pricing}>
-                <p className={styles.dprice}>₹9,999 </p>
-                <p className={styles.oprice}>₹11,999 </p>
+                <p className={styles.dprice}>₹{price} </p>
+                <p className={styles.oprice}>₹{dupprice} </p>
               </div>
               <p className={styles.optionl_}>*EMI options available</p>
               </div>

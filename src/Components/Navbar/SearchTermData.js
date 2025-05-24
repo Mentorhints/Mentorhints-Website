@@ -37,23 +37,23 @@ export const courseData = [
       },
     ],
   },
-  {
-    menu: "Data Analyst",
-    courses: [
-      {
-        name: "Data Analyst",
-        courseId: "dataAnalyst",
-        keywords: [
-          "data analysis",
-          "SQL",
-          "Python",
-          "business intelligence",
-          "data visualization",
-          "machine learning",
-        ],
-      },
-    ],
-  },
+  // {
+  //   menu: "Data Analyst",
+  //   courses: [
+  //     {
+  //       name: "Data Analyst",
+  //       courseId: "dataAnalyst",
+  //       keywords: [
+  //         "data analysis",
+  //         "SQL",
+  //         "Python",
+  //         "business intelligence",
+  //         "data visualization",
+  //         "machine learning",
+  //       ],
+  //     },
+  //   ],
+  // },
   // {
   //   menu: "Python with Data Science",
   //   courses: [

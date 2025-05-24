@@ -23,11 +23,11 @@ const DropDown = ({ setIsOpen }) => {
     { icon: backend, label: "Backend Development", path: "/courses/backend" },
 
     { icon: uiux, label: "UI/UX Design", path: "/courses/uiux" },
-    {
-      icon: dataAnalsts,
-      label: "Data Analyst",
-      path: "/courses/dataAnalyst",
-    },
+    // {
+    //   icon: dataAnalsts,
+    //   label: "Data Analyst",
+    //   path: "/courses/dataAnalyst",
+    // },
     { icon: AI, label: "AI Development", path: "/courses/aiml" },
     // {
     //   icon: testing,

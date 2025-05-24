@@ -6,8 +6,6 @@ import uiux from "../../assets/UIUXCourse.svg";
 import fullStack from "../../assets/FullStackCourse.svg";
 import frontend1 from "../../assets/FrontendCourse.svg";
 import dataAnalyst from "../../assets/DataAnalystCourse.svg";
-import { backend,frontend,fullstack,UIUX,AI } from "../CourseCurriculum/data";
-import { data } from "react-router-dom";
 
 
 export const courses = {
@@ -24,17 +22,19 @@ export const courses = {
     image: AIMLImg,
     courseKey: "aiml",
     mentors: ["Gokul"],
-    data:AI
+    price:"23,999",
+    dupPrice:"27,999"
   },
-  dataAnalyst: {
-    name: "Data Analyst",
-    description:
-      "Became Data analyst at 3 months by developing skills in Excel, SQL, and Python. ",
-    image: dataAnalyst,
-    courseKey: "dataAnalyst",
-    mentors: ["Mohammed"],
-    data:AI
-  },
+  // dataAnalyst: {
+  //   name: "Data Analyst",
+  //   description:
+  //     "Became Data analyst at 3 months by developing skills in Excel, SQL, and Python. ",
+  //   image: dataAnalyst,
+  //   courseKey: "dataAnalyst",
+  //   mentors: ["Mohammed"],
+  //   price:"23,999",
+  //   dupPrice:"27,999"
+  // },
   "full-stack": {
     name: "Full-stack Development",
     description:
@@ -42,7 +42,8 @@ export const courses = {
     image: fullStack,
     courseKey: "full-stack",
     mentors: ["Arun", "Mohammed"],
-    data:fullstack
+    price:"23,999",
+    dupPrice:"27,999"
   },
   frontend: {
     name: "Frontend Development",
@@ -51,7 +52,8 @@ export const courses = {
     image: frontend1,
     courseKey: "frontend",
     mentors: ["Arun"],
-    data:frontend
+    price:"9,999",
+    dupPrice:"11,999"
   },
   uiux: {
     name: "UI/UX  Design",
@@ -60,7 +62,8 @@ export const courses = {
     image: uiux,
     courseKey: "uiux",
     mentors: ["Udaya"],
-    data:UIUX
+    price:"9,999",
+    dupPrice:"11,999"
   },
   backend: {
     name: "Backend Development",
@@ -69,6 +72,7 @@ export const courses = {
     image: backend1,
     courseKey: "backend",
     mentors: ["Arun", "Mohammed"],
-    data:backend
+    price:"17,999",
+    dupPrice:"20,999"
   },
 };

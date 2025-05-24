@@ -6,6 +6,8 @@ import Search from "../../assets/search.svg";
 import testing from "../../assets/Icon.svg"
 import datascience from "../../assets/atom-03.svg"
 import ai from "../../assets/sparks.svg"
+import leftarrow from "../../assets/chevron-left.svg"
+import rightarrow from "../../assets/chevron-right.svg"
 
 import Server02 from "../../assets/server-02.svg";
 import "../../StylesOfComponents/LiveCourses/LiveCourses.css";
@@ -38,13 +40,13 @@ const courses = [
       skills: ["Python", "Java", "React Js"],
       buttonText: "View Course",
     },
-    {
-      icon: LineChartUp02,
-      iconBgColor: "#fdebe9",
-      title: "Data Analytics",
-      skills: ["Python", "Power BI", "Django"],
-      buttonText: "View Course",
-    },
+    // {
+    //   icon: LineChartUp02,
+    //   iconBgColor: "#fdebe9",
+    //   title: "Data Analytics",
+    //   skills: ["Python", "Power BI", "Django"],
+    //   buttonText: "View Course",
+    // },
     {
       icon: LineChartUp02,
       iconBgColor: "#e6fdf0",
@@ -74,6 +76,18 @@ const courses = [
     buttonText: "View Course",
  }
   ];
+
+const NextArrow = ({ onClick }) => (
+  <div className="custom-arrow next" onClick={onClick} style={{position:"absolute",top:"50%",right:"0px"}}>
+    <img src={rightarrow} />
+  </div>
+);
+
+const PrevArrow = ({ onClick }) => (
+  <div className="custom-arrow prev" onClick={onClick} style={{position:"absolute",top:"50%",left:"-25px",zIndex:"100"}}>
+    <img src={leftarrow} />
+  </div>
+);
 
  const LiveCourses = () => {
   const [slidesToShow, setSlidesToShow] = useState(1.8);
@@ -148,6 +162,8 @@ const courses = [
     centerPadding: "16px",
     slidesToShow: slidesToShow,
     swipeToSlide: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />
   };
     
   const filteredCourses = courses.filter((course) =>
