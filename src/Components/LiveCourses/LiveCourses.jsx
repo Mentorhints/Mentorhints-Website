@@ -78,13 +78,13 @@ const courses = [
   ];
 
 const NextArrow = ({ onClick }) => (
-  <div className="custom-arrow next" onClick={onClick} style={{position:"absolute",top:"50%",right:"0px"}}>
+  <div className="custom-arrow next" onClick={onClick} style={{position:"absolute",top:"50%",right:"-45px"}}>
     <img src={rightarrow} />
   </div>
 );
 
 const PrevArrow = ({ onClick }) => (
-  <div className="custom-arrow prev" onClick={onClick} style={{position:"absolute",top:"50%",left:"-25px",zIndex:"100"}}>
+  <div className="custom-arrow prev" onClick={onClick} style={{position:"absolute",top:"50%",left:"-65px",zIndex:"100"}}>
     <img src={leftarrow} />
   </div>
 );
