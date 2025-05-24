@@ -1,11 +1,11 @@
 
 import CodeBrowser from "../../assets/code-browser.svg";
 import Database02 from "../../assets/database-02.svg";
-import LineChartUp02 from "../../assets/line-chart-up-02.svg";
+import LineChartUp02 from "../../assets/Subtract.svg";
 import Search from "../../assets/search.svg";
 import testing from "../../assets/Icon.svg"
 import datascience from "../../assets/atom-03.svg"
-import ai from "../../assets/sparks.svg"
+import ai from "../../assets/icon1.svg"
 import leftarrow from "../../assets/chevron-left.svg"
 import rightarrow from "../../assets/chevron-right.svg"
 
