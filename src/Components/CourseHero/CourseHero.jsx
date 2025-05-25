@@ -6,6 +6,7 @@ import ellipseforCourse from "../../assets/EllipseforCourse.svg";
 import { useContext } from "react";
 import { ScreenSizeContext } from "../../ScreenSizeContext.jsx";
 import { useNavigate } from "react-router-dom";
+import interncard from "../../assets/GuarenteeInterncard.svg";
 const CourseHero = ({ courseName, courseImage, courseDescription }) => {
   const { isDesktop } = useContext(ScreenSizeContext);
   const navigate = useNavigate();
@@ -27,10 +28,14 @@ const CourseHero = ({ courseName, courseImage, courseDescription }) => {
         )}
 
         <img src={ellipseforCourse} alt="" className="ellipseforCourse" />
-
+        <img
+          src={interncard}
+          alt="intern card label"
+          className="interncardLabel"
+        />
         <div className="textdet">
           <p>Courses &gt; {courseName}</p>
-          <h3>{courseName}</h3>
+          <h3 style={{ whiteSpace: "pre-line" }}>{courseName}</h3>
           <p>{courseDescription}</p>
           <button className="CourseEnrollbtn" onClick={handleEnrollClick}>
             Enroll Now

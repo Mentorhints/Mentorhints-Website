@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: space-between;
   background: #08080c;
+  overflow: hidden;
 }
 
 /* Hero Image Section */
@@ -152,6 +153,22 @@
   color: white;
   cursor: pointer;
 }
+@keyframes slideRightToLeft {
+  0% {
+    left: 100%; /* Start just outside right */
+  }
+  100% {
+    left: calc(100% - 202px); /* End when image’s left edge aligns perfectly */
+  }
+}
+.interncardLabel {
+  position: absolute;
+  right: 0px;
+  top: 48px;
+  width: 200px; /* Set your actual image width */
+  animation: slideRightToLeft 3s linear infinite;
+  z-index: 10;
+}
 @media (max-width: 550px) {
   .TestingAutomation {
     height: 700px;
@@ -203,5 +220,8 @@
     position: absolute;
     top: 5%;
     left: -17%;
+  }
+  .interncardLabel {
+    top: 14px;
   }
 }

@@ -1,95 +1,106 @@
-
 import CodeBrowser from "../../assets/code-browser.svg";
 import Database02 from "../../assets/database-02.svg";
 import LineChartUp02 from "../../assets/Subtract.svg";
 import Search from "../../assets/search.svg";
-import testing from "../../assets/Icon.svg"
-import datascience from "../../assets/atom-03.svg"
-import ai from "../../assets/icon1.svg"
-import leftarrow from "../../assets/chevron-left.svg"
-import rightarrow from "../../assets/chevron-right.svg"
+import testing from "../../assets/Icon.svg";
+import datascience from "../../assets/atom-03.svg";
+import ai from "../../assets/icon1.svg";
+import leftarrow from "../../assets/chevron-left.svg";
+import rightarrow from "../../assets/chevron-right.svg";
 
 import Server02 from "../../assets/server-02.svg";
 import "../../StylesOfComponents/LiveCourses/LiveCourses.css";
-import React, { useRef,useState,useEffect } from "react";  
+import React, { useRef, useState, useEffect } from "react";
 
 import CourseCard from "./CourseCard";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";  
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import { useContext } from "react";
+import { ScreenSizeContext } from "../../ScreenSizeContext.jsx";
+
 const courses = [
-    {
-      icon: Database02,
-      iconBgColor: "#f5e8fc",
-      title: "Full-stack Development",
-      skills: ["Java", "Python", "MySQL"],
-      buttonText: "View Course",
-    },
-    {
-      icon: CodeBrowser,
-      iconBgColor: "#fefcd9",
-      title: "Front-end Development",
-      skills: ["HTML & CSS", "Javascript", "React"],
-      buttonText: "View Course",
-    },
-    {
-      icon: Server02,
-      iconBgColor: "#fff0e7",
-      title: "Back-end Development",
-      skills: ["Python", "Java", "React Js"],
-      buttonText: "View Course",
-    },
-    // {
-    //   icon: LineChartUp02,
-    //   iconBgColor: "#fdebe9",
-    //   title: "Data Analytics",
-    //   skills: ["Python", "Power BI", "Django"],
-    //   buttonText: "View Course",
-    // },
-    {
-      icon: LineChartUp02,
-      iconBgColor: "#e6fdf0",
-      title: "UI/UX Design",
-      skills: ["UX Design", "Figma", "Adobe XD"],
-      buttonText: "View Course",
-    },
-      {
-    icon:testing,
-    title:"Testing Automation",
-    skills:["Selenium","TestNG","Jenkins"],
-    iconBgColor:"#E6F0FE",
+  {
+    icon: Database02,
+    iconBgColor: "#f5e8fc",
+    title: "Full-stack Development",
+    skills: ["Java", "Python", "MySQL"],
     buttonText: "View Course",
- },
- {
-    icon:datascience,
-    title:"Python with Datascience",
-    skills:["Python","NumPy","Seaborn"],
-    iconBgColor:"#FDEBE9",
+  },
+  {
+    icon: CodeBrowser,
+    iconBgColor: "#fefcd9",
+    title: "Front-end Development",
+    skills: ["HTML & CSS", "Javascript", "React"],
     buttonText: "View Course",
- },
- {
-    icon:ai,
-    title:"AI Development",
-    skills:["Python","Machine learning","Deep learning"],
-    iconBgColor:"#F5E8FC",
+  },
+  {
+    icon: Server02,
+    iconBgColor: "#fff0e7",
+    title: "Back-end Development",
+    skills: ["Python", "Java", "React Js"],
     buttonText: "View Course",
- }
-  ];
+  },
+  // {
+  //   icon: LineChartUp02,
+  //   iconBgColor: "#fdebe9",
+  //   title: "Data Analytics",
+  //   skills: ["Python", "Power BI", "Django"],
+  //   buttonText: "View Course",
+  // },
+  {
+    icon: LineChartUp02,
+    iconBgColor: "#e6fdf0",
+    title: "UI/UX Design",
+    skills: ["UX Design", "Figma", "Adobe XD"],
+    buttonText: "View Course",
+  },
+  {
+    icon: testing,
+    title: "Testing Automation",
+    skills: ["Selenium", "TestNG", "Jenkins"],
+    iconBgColor: "#E6F0FE",
+    buttonText: "View Course",
+  },
+  {
+    icon: datascience,
+    title: "Python with Datascience",
+    skills: ["Python", "NumPy", "Seaborn"],
+    iconBgColor: "#FDEBE9",
+    buttonText: "View Course",
+  },
+  {
+    icon: ai,
+    title: "AI Development",
+    skills: ["Python", "Machine learning", "Deep learning"],
+    iconBgColor: "#F5E8FC",
+    buttonText: "View Course",
+  },
+];
 
 const NextArrow = ({ onClick }) => (
-  <div className="custom-arrow next" onClick={onClick} style={{position:"absolute",top:"50%",right:"-45px"}}>
+  <div
+    className="custom-arrow next"
+    onClick={onClick}
+    style={{ position: "absolute", top: "50%", right: "-45px" }}
+  >
     <img src={rightarrow} />
   </div>
 );
 
 const PrevArrow = ({ onClick }) => (
-  <div className="custom-arrow prev" onClick={onClick} style={{position:"absolute",top:"50%",left:"-65px",zIndex:"100"}}>
+  <div
+    className="custom-arrow prev"
+    onClick={onClick}
+    style={{ position: "absolute", top: "50%", left: "-65px", zIndex: "100" }}
+  >
     <img src={leftarrow} />
   </div>
 );
 
- const LiveCourses = () => {
+const LiveCourses = () => {
+  const { isDesktop } = useContext(ScreenSizeContext);
   const [slidesToShow, setSlidesToShow] = useState(1.8);
   const [searchTerm, setSearchTerm] = useState(""); // State for search input
   const [animatedPlaceholder, setAnimatedPlaceholder] = useState("");
@@ -97,7 +108,6 @@ const PrevArrow = ({ onClick }) => (
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -124,9 +134,9 @@ const PrevArrow = ({ onClick }) => (
 
   useEffect(() => {
     const currentTitle = courses[titleIndex].title;
-    
-    const typingSpeed = isDeleting ? 100 : 150; 
-    const pauseBeforeDeleting = 1000; 
+
+    const typingSpeed = isDeleting ? 100 : 150;
+    const pauseBeforeDeleting = 1000;
 
     const typingEffect = setTimeout(() => {
       if (!isDeleting) {
@@ -162,34 +172,34 @@ const PrevArrow = ({ onClick }) => (
     centerPadding: "16px",
     slidesToShow: slidesToShow,
     swipeToSlide: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
+    arrows: isDesktop,
+    nextArrow: isDesktop ? <NextArrow /> : null,
+    prevArrow: isDesktop ? <PrevArrow /> : null,
   };
-    
+
   const filteredCourses = courses.filter((course) =>
     course.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
-  
-    return (
-      <div className="desktop">
-        <div className="overlap">
-          <div className="Live-Header">        
-  
-            <div className="header">
-              <div className="frame">
-                        <div className="ellipse" />
-                        <div className="text-wrapper">Courses</div>
-              </div>
-              <div className="course-description">
-                  <h1 className="course-heading">Live Courses</h1>
-                  <p className="course-subtext">
-                    Get learned from experts and gain real-world skills with flexible
-                    online courses tailored for students.
-                  </p>
-              </div>
+
+  return (
+    <div className="desktop">
+      <div className="overlap">
+        <div className="Live-Header">
+          <div className="header">
+            <div className="frame">
+              <div className="ellipse" />
+              <div className="text-wrapper">Courses</div>
             </div>
+            <div className="course-description">
+              <h1 className="course-heading">Live Courses</h1>
+              <p className="course-subtext">
+                Get learned from experts and gain real-world skills with
+                flexible online courses tailored for students.
+              </p>
+            </div>
+          </div>
           <div className="search-container">
-          <input
+            <input
               type="text"
               placeholder={`${animatedPlaceholder}${showCursor ? "|" : " "}`}
               className="search-text"
@@ -198,24 +208,22 @@ const PrevArrow = ({ onClick }) => (
             />
             <img src={Search} className="search-icon" />
           </div>
-          </div>
-          <div className="courses-container">
-            <div className="courses-grid" >
-              <Slider {...settings}>
-                {filteredCourses.length > 0 ? (
+        </div>
+        <div className="courses-container">
+          <div className="courses-grid">
+            <Slider {...settings}>
+              {filteredCourses.length > 0 ? (
                 filteredCourses.map((course, index) => (
                   <CourseCard key={index} {...course} />
                 ))
               ) : (
                 <p className="no-results">No courses found</p>
-              )}</Slider>
-            </div>
+              )}
+            </Slider>
           </div>
         </div>
       </div>
-    );
-  };
-  export  default LiveCourses;
-
-
-  
+    </div>
+  );
+};
+export default LiveCourses;

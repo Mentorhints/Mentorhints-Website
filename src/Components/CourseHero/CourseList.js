@@ -5,9 +5,12 @@ import AIMLImg from "../../assets/AIML.svg";
 import uiux from "../../assets/UIUXCourse.svg";
 import fullStack from "../../assets/FullStackCourse.svg";
 import frontend1 from "../../assets/FrontendCourse.svg";
-import dataAnalyst from "../../assets/DataAnalystCourse.svg";
-
-
+// import dataAnalyst from "../../assets/DataAnalystCourse.svg";
+import UIUXC from "../../assets/UI UX Certificate.svg";
+import frontendC from "../../assets/Frontend Certificate.svg";
+import backendC from "../../assets/Backend Certificate.svg";
+import AIDevC from "../../assets/Ai Development Certificate.svg";
+import fullstackC from "../../assets/Fullstack Certificate.svg";
 export const courses = {
   // "testing-automation": {
   //   name: "Testing Automation",
@@ -18,12 +21,13 @@ export const courses = {
   aiml: {
     name: "AI Development",
     description:
-      "Became AI Developer at 3 months by developing skills in Python, Git & Github",
+      "Become an AI Developer in three months by developing skills in Python, Git and GitHub",
     image: AIMLImg,
     courseKey: "aiml",
     mentors: ["Gokul"],
-    price:"23,999",
-    dupPrice:"27,999"
+    price: "23,999",
+    dupPrice: "27,999",
+    certificateimg: AIDevC,
   },
   // dataAnalyst: {
   //   name: "Data Analyst",
@@ -38,41 +42,45 @@ export const courses = {
   "full-stack": {
     name: "Full-stack Development",
     description:
-      "Became Fullstack developer designer at 6 months by developing skills in HTML, CSS, Java, DSA ",
+      "Become a Fullstack developer in 6 months by developing skills in HTML, CSS, Java and DSA ",
     image: fullStack,
     courseKey: "full-stack",
     mentors: ["Arun", "Mohammed"],
-    price:"23,999",
-    dupPrice:"27,999"
+    price: "23,999",
+    dupPrice: "27,999",
+    certificateimg: fullstackC,
   },
   frontend: {
     name: "Frontend Development",
     description:
-      "Became Frontend developer designer at 3 months by developing skills in HTML, CSS ",
+      "Become a Frontend developer in 3 months by developing skills in HTML, CSS, JS and ReactJS ",
     image: frontend1,
     courseKey: "frontend",
     mentors: ["Arun"],
-    price:"9,999",
-    dupPrice:"11,999"
+    price: "9,999",
+    dupPrice: "11,999",
+    certificateimg: frontendC,
   },
   uiux: {
-    name: "UI/UX  Design",
+    name: "UI/UX\nDesign",
     description:
-      "Become UI/UX designer at 3 months by developing skills in user research, IA & figma ",
+      "Become UI/UX designer in 3 months by developing skills in user research, IA & figma ",
     image: uiux,
     courseKey: "uiux",
     mentors: ["Udaya"],
-    price:"9,999",
-    dupPrice:"11,999"
+    price: "9,999",
+    dupPrice: "11,999",
+    certificateimg: UIUXC,
   },
   backend: {
     name: "Backend Development",
     description:
-      "Become Backend developer designer at 4 months by developing skills in Java, DSA",
+      "Become Backend developer in 4 months by developing skills in Java, DSA",
     image: backend1,
     courseKey: "backend",
     mentors: ["Arun", "Mohammed"],
-    price:"17,999",
-    dupPrice:"20,999"
+    price: "17,999",
+    dupPrice: "20,999",
+    certificateimg: backendC,
   },
 };
