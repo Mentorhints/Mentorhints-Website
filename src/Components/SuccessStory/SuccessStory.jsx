@@ -13,6 +13,7 @@ const SuccessStory = () => {
     infinite: false,
     slidesToShow: 1,
     swipeToSlide: true,
+    arrows: false,
   };
   return (
     <div className="SuccessStory">
@@ -20,13 +21,14 @@ const SuccessStory = () => {
 
       {!isDesktop ? (
         <div className="slide-wrapper">
-        <Slider {...settings}>
-          {Feedback.map((itemF, index) => (
-            <div key={index} className="slide-container">
-              <SuccessStoryCard {...itemF} />
-            </div>
-          ))}
-        </Slider></div>
+          <Slider {...settings}>
+            {Feedback.map((itemF, index) => (
+              <div key={index} className="slide-container">
+                <SuccessStoryCard {...itemF} />
+              </div>
+            ))}
+          </Slider>
+        </div>
       ) : (
         <div className="StudentSuccess">
           {Feedback.map((itemF, index) => (

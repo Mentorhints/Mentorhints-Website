@@ -1,4 +1,3 @@
-import { courseInfo } from "./CourseData.js";
 import "../../StylesOfComponents/CourseHero/Coursehero.css";
 import line from "../../assets/Line.svg";
 import lineMobile from "../../assets/LineMobile.svg";
@@ -7,7 +6,12 @@ import { useContext } from "react";
 import { ScreenSizeContext } from "../../ScreenSizeContext.jsx";
 import { useNavigate } from "react-router-dom";
 import interncard from "../../assets/GuarenteeInterncard.svg";
-const CourseHero = ({ courseName, courseImage, courseDescription }) => {
+const CourseHero = ({
+  courseName,
+  courseImage,
+  courseDescription,
+  courseDuration,
+}) => {
   const { isDesktop } = useContext(ScreenSizeContext);
   const navigate = useNavigate();
 
@@ -18,6 +22,29 @@ const CourseHero = ({ courseName, courseImage, courseDescription }) => {
       },
     });
   };
+  const courseInfo = [
+    {
+      head: "Starting from",
+      value: "1 July 2025",
+    },
+    {
+      head: "Duration",
+      value: courseDuration,
+    },
+    {
+      head: "Language",
+      value: "Tamil + English",
+    },
+    {
+      head: "Mode",
+      value: "Live & Recorded",
+    },
+    {
+      head: "Perks",
+      value: "Internship Offer",
+    },
+  ];
+
   return (
     <>
       <div className="TestingAutomation">

@@ -8,6 +8,7 @@ import CardComponent from "../Components/CourseMentors/CardComponent.jsx";
 import CourseCertificate from "../Components/CourseCertificate/CourseCertificate.jsx";
 import Faq from "../Components/CourseFAQ/FaqRedseign.jsx";
 import Container from "../Components/CoursePlan/CourseCardResign.jsx";
+import SuccessStory from "../Components/SuccessStory/SuccessStory.jsx";
 
 const Courses = () => {
   const { courseId } = useParams();
@@ -19,12 +20,14 @@ const Courses = () => {
         courseName={course.name}
         courseImage={course.image}
         courseDescription={course.description}
+        courseDuration={course.duration}
       />
       <CourseDetail courseName={course.name} />
       <CourseCurriculum />
       <CardComponent courseKey={course.courseKey} />
       <Container price={course.price} dupprice={course.dupPrice} />
       <CourseCertificate CourseCertificate={course.certificateimg} />
+      <SuccessStory />
       <Faq />
     </>
   );

@@ -21,13 +21,14 @@ export const courses = {
   aiml: {
     name: "AI Development",
     description:
-      "Become an AI Developer in three months by developing skills in Python, Git and GitHub",
+      "Become an AI Developer in five months by developing skills in Python, Git and GitHub",
     image: AIMLImg,
     courseKey: "aiml",
     mentors: ["Gokul"],
     price: "23,999",
-    dupPrice: "27,999",
+    dupPrice: "39,999",
     certificateimg: AIDevC,
+    duration: "5 Months",
   },
   // dataAnalyst: {
   //   name: "Data Analyst",
@@ -47,8 +48,9 @@ export const courses = {
     courseKey: "full-stack",
     mentors: ["Arun", "Mohammed"],
     price: "23,999",
-    dupPrice: "27,999",
+    dupPrice: "39,999",
     certificateimg: fullstackC,
+    duration: "6 Months",
   },
   frontend: {
     name: "Frontend Development",
@@ -58,8 +60,9 @@ export const courses = {
     courseKey: "frontend",
     mentors: ["Arun"],
     price: "9,999",
-    dupPrice: "11,999",
+    dupPrice: "14,999",
     certificateimg: frontendC,
+    duration: "3 Months",
   },
   uiux: {
     name: "UI/UX\nDesign",
@@ -69,8 +72,9 @@ export const courses = {
     courseKey: "uiux",
     mentors: ["Udaya"],
     price: "9,999",
-    dupPrice: "11,999",
+    dupPrice: "14,999",
     certificateimg: UIUXC,
+    duration: "3 Months",
   },
   backend: {
     name: "Backend Development",
@@ -80,7 +84,8 @@ export const courses = {
     courseKey: "backend",
     mentors: ["Arun", "Mohammed"],
     price: "17,999",
-    dupPrice: "20,999",
+    dupPrice: "29,999",
     certificateimg: backendC,
+    duration: "4 Months",
   },
 };

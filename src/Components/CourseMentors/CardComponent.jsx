@@ -36,8 +36,7 @@ const CardComponent = ({ courseKey }) => {
                       {mentor.role} <strong>{mentor.company}</strong>
                     </p>
                     <p>
-                      {mentor.prev_company} | {mentor.skills} |{" "}
-                      {mentor.noOfstudents}
+                      {mentor.skills} {mentor.noOfstudents}
                     </p>
                     {/* <p>{mentor.noOfstudents}</p> */}
                     <div className="imgwithyoe">

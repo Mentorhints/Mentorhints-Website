@@ -27,6 +27,7 @@ const courses = [
     title: "Full-stack Development",
     skills: ["Java", "Python", "MySQL"],
     buttonText: "View Course",
+    path: "/courses/full-stack",
   },
   {
     icon: CodeBrowser,
@@ -34,6 +35,7 @@ const courses = [
     title: "Front-end Development",
     skills: ["HTML & CSS", "Javascript", "React"],
     buttonText: "View Course",
+    path: "/courses/frontend",
   },
   {
     icon: Server02,
@@ -41,6 +43,7 @@ const courses = [
     title: "Back-end Development",
     skills: ["Python", "Java", "React Js"],
     buttonText: "View Course",
+    path: "/courses/backend",
   },
   // {
   //   icon: LineChartUp02,
@@ -55,27 +58,29 @@ const courses = [
     title: "UI/UX Design",
     skills: ["UX Design", "Figma", "Adobe XD"],
     buttonText: "View Course",
+    path: "/courses/uiux",
   },
-  {
-    icon: testing,
-    title: "Testing Automation",
-    skills: ["Selenium", "TestNG", "Jenkins"],
-    iconBgColor: "#E6F0FE",
-    buttonText: "View Course",
-  },
-  {
-    icon: datascience,
-    title: "Python with Datascience",
-    skills: ["Python", "NumPy", "Seaborn"],
-    iconBgColor: "#FDEBE9",
-    buttonText: "View Course",
-  },
+  // {
+  //   icon: testing,
+  //   title: "Testing Automation",
+  //   skills: ["Selenium", "TestNG", "Jenkins"],
+  //   iconBgColor: "#E6F0FE",
+  //   buttonText: "View Course",
+  // },
+  // {
+  //   icon: datascience,
+  //   title: "Python with Datascience",
+  //   skills: ["Python", "NumPy", "Seaborn"],
+  //   iconBgColor: "#FDEBE9",
+  //   buttonText: "View Course",
+  // },
   {
     icon: ai,
     title: "AI Development",
     skills: ["Python", "Machine learning", "Deep learning"],
     iconBgColor: "#F5E8FC",
     buttonText: "View Course",
+    path: "/courses/aiml",
   },
 ];
 

@@ -2,8 +2,13 @@ import React from "react";
 import styles from "../../StylesOfComponents/CoursePlan/Container.module.css";
 import certificate from "../../assets/PlanCertificate.svg";
 import greentick from "../../assets/SlimTick.svg";
+import { useNavigate } from "react-router-dom";
 
-export default function Container({price,dupprice}) {
+export default function Container({ price, dupprice }) {
+  const navigate = useNavigate();
+  const handleEnrollClick = () => {
+    navigate("/form");
+  };
   return (
     <div className="con-con">
       <div className={styles.container}>
@@ -23,11 +28,11 @@ export default function Container({price,dupprice}) {
                 <span className={styles.studentPack}>Student Pack</span>
               </div>
               <div className={styles.pack}>
-              <div className={styles.pricing}>
-                <p className={styles.dprice}>₹{price} </p>
-                <p className={styles.oprice}>₹{dupprice} </p>
-              </div>
-              <p className={styles.optionl_}>*EMI options available</p>
+                <div className={styles.pricing}>
+                  <p className={styles.dprice}>₹{price} </p>
+                  <p className={styles.oprice}>₹{dupprice} </p>
+                </div>
+                <p className={styles.optionl_}>*EMI options available</p>
               </div>
 
               <div className={styles.benefits}>
@@ -73,7 +78,9 @@ export default function Container({price,dupprice}) {
               </div>
 
               <div className={styles.primaryButton}>
-                <span className={styles.joinNow}>Join Now</span>
+                <span className={styles.joinNow} onClick={handleEnrollClick}>
+                  Join Now
+                </span>
               </div>
             </div>
           </div>

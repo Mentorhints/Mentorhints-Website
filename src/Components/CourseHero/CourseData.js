@@ -1,7 +1,7 @@
 export const courseInfo = [
   {
     head: "Starting from",
-    value: "4 Jan 2025",
+    value: "1 July 2025",
   },
   {
     head: "Duration",
