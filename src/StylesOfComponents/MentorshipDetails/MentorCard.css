@@ -1,0 +1,44 @@
+.mentorimage {
+  width: 129px;
+  height: 125px;
+  border-radius: 5px;
+  border: 1px solid var(--blue-color);
+  margin: 10px auto 0px;
+}
+.mentorname,
+.mentor_role {
+  font-weight: 500;
+  margin: auto;
+}
+.mentorname {
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.856);
+  padding: 8px 3px;
+}
+.mentor_role {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.856);
+  padding: 3px;
+}
+.mentorcompany {
+  margin: 5px auto;
+}
+
+@media (max-width: 500px) {
+  .mentorimage {
+    width: 90px;
+    height: 100px;
+  }
+  .mentorname,
+  .mentor_role {
+    font-weight: 500;
+    margin-left: 6px;
+  }
+  .mentorname {
+    font-size: 15px;
+    padding: 5px 3px;
+  }
+  .mentor_role {
+    font-size: 10px;
+  }
+}
