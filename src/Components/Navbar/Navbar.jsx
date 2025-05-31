@@ -8,6 +8,7 @@ import "../../StylesOfComponents/Navbar/Navbar.css";
 import { motion } from "framer-motion";
 import { courseData } from "./SearchTermData.js";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import DropDown from "./DropDown.jsx";
 const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -69,9 +70,10 @@ const Navbar = () => {
           />
         </a>
         {isOpen && <DropDown setIsOpen={setIsOpen} />}
-        <a href="#">Become a Mentor</a>
-        <a href="#">About</a>
-        <a href="#">Blogs</a>
+        {/* <a href="#">Become a Mentor</a> */}
+        {/* <a href="#">About</a> */}
+        <Link to="/about">About</Link>
+        <a href="https://blogs.mentorhints.com/">Blogs</a>
       </div>
       <div className="buttonsofnav">
         <div className="searchbar">

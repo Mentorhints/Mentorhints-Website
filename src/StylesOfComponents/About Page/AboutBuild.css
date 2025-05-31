@@ -1,0 +1,104 @@
+.aboutbluebox {
+  height: 240px;
+  background-color: rgba(217, 233, 254, 1);
+  padding: 24px;
+  margin: 40px 0px;
+}
+.aboutbluebox .headingofabout {
+  color: rgba(0, 80, 184, 1);
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.detailing {
+  width: 700px;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.015em;
+  text-align: center;
+  margin: auto;
+}
+.Techdata {
+  width: 1024px;
+  height: 352px;
+  display: flex;
+  margin: 50px auto;
+}
+.Techdata img {
+  margin-left: auto;
+}
+
+.techdatatext {
+  margin: 80px 0px;
+}
+.headingoftech {
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  color: rgba(154, 29, 222, 1);
+}
+.subheadingoftech {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: -0.0025em;
+}
+.techparagraph {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.015em;
+  width: 600px;
+}
+@media (max-width: 550px) {
+  .aboutbluebox {
+    height: 328px;
+    padding: 25px 10px;
+  }
+  .aboutbluebox .headingofabout {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.0025em;
+    text-align: center;
+  }
+  .detailing {
+    width: 335px;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+  }
+  .Techdata {
+    width: 349px;
+    height: 712px;
+    flex-direction: column;
+    margin: 10px auto;
+  }
+  .socialmediaImage {
+    width: 345px;
+    height: 345px;
+  }
+  .techdatatext {
+    width: 348px;
+    height: 328px;
+    margin: 30px 0px;
+  }
+  .headingoftech {
+    font-size: 24px;
+    letter-spacing: -0.0025em;
+  }
+  .subheadingoftech {
+    font-size: 18px;
+  }
+  .techparagraph {
+    font-size: 18px;
+    width: 348px;
+  }
+  .Techdata img {
+    margin-left: 0px;
+    overflow: hidden;
+  }
+}

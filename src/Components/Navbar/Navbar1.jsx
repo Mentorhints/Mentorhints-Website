@@ -247,11 +247,18 @@ const SidebarMenu = () => {
             <div className="menu-divider"></div>
             {!isDropdownOpen && (
               <div className="sidebar-links">
-                <div className="sidebar-link">Become a Mentor</div>
+                {/* <div className="sidebar-link">Become a Mentor</div> */}
                 <div className="menu-divider"></div>
-                <div className="sidebar-link">Blogs</div>
+                <a
+                  className="sidebar-link"
+                  href="https://blogs.mentorhints.com/"
+                >
+                  Blogs
+                </a>
                 <div className="menu-divider"></div>
-                <div className="sidebar-link">About</div>
+                <Link className="sidebar-link" to="/about">
+                  About
+                </Link>
               </div>
             )}
           </motion.div>

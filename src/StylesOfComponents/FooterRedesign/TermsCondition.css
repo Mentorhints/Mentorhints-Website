@@ -1,0 +1,50 @@
+.TermsAndConditions {
+  margin: 50px 160px;
+}
+.TermsAndConditions .Heading {
+  text-align: center;
+  font-weight: 600;
+  font-size: 32px;
+  /* padding-bottom: 30px; */
+  margin-top: 50px;
+}
+.TermsAndConditions .thead {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 12px 0px;
+  letter-spacing: 0.0175em;
+  line-height: 24px;
+}
+.TermsAndConditions .Term .tcontent {
+  text-indent: 14px;
+  text-align: justify;
+  letter-spacing: 0.0175em;
+  margin: 8px 0px;
+}
+.TermsAndConditions .Term {
+  font-size: 24px;
+  padding: 6px;
+}
+.TermsAndConditions .Term ul {
+  margin-left: 40px;
+}
+.TermsAndConditions .tcontent,
+.TermsAndConditions ul li {
+  font-size: 16px;
+  color: rgba(57, 57, 61, 1);
+  font-weight: 400;
+}
+.TermsAndConditions ul li {
+  list-style: disc;
+  padding: 3px;
+}
+
+@media (max-width: 550px) {
+  .TermsAndConditions {
+    margin: 20px 16px;
+  }
+  .TermsAndConditions .Heading {
+    text-wrap: nowrap;
+    margin: auto;
+  }
+}

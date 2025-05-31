@@ -78,13 +78,11 @@ const Step2 = ({ formData, handleChange, onSubmitSuccess }) => {
         placeholder="Select your course"
         readOnly
         options={[
+          "AI Development",
+          "Full Stack Development",
           "Backend Development",
           "Frontend Development",
           "UI/UX",
-          "Data Analyst",
-          "AI Development",
-          "Data Science",
-          "Testing Automation",
         ]}
         formData={formData}
         handleChange={handleChange}

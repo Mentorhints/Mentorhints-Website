@@ -1,0 +1,80 @@
+.contentofpp {
+  margin: 50px 160px;
+}
+.contentheading {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: center;
+}
+.subhead {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.0025em;
+  margin-top: 50px;
+}
+.contentofpp p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.0175em;
+  color: #616161;
+  text-indent: 15px;
+  margin: 12px 0px;
+  width: 1140px;
+}
+.titleofprivacypolicy {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: -0.0025em;
+  margin: 24px 0px 12px;
+}
+.contentp {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.0175em;
+  margin-bottom: 12px;
+}
+.subtitleofpp {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+  text-indent: 15px;
+}
+.listofpolicy {
+  margin-left: 50px;
+  padding: 8px;
+}
+.pointsinpp {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.0175em;
+  text-align: left;
+  color: #616161;
+}
+.listof2pp {
+  color: #616161;
+
+  line-height: 24px;
+  margin-left: 55px;
+}
+.listof3pp {
+  color: #616161;
+
+  line-height: 24px;
+  margin-left: 35px;
+}
+@media (max-width: 550px) {
+  .contentofpp {
+    margin: 20px auto;
+    width: 340px;
+  }
+  .contentofpp p {
+    width: 340px;
+  }
+}

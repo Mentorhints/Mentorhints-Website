@@ -1,0 +1,104 @@
+.about-home {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.about-home h1 {
+  font-weight: 600;
+}
+.about-home img {
+  height: 362px;
+  width: 544px;
+  padding: 20px;
+}
+.about-home h3 {
+  color: rgba(0, 106, 245, 1);
+  font-size: 28px;
+  padding: 10px;
+}
+.about-home h3 span {
+  color: rgba(255, 108, 10, 1);
+}
+.about-home p {
+  padding: 10px 217px;
+  font-size: 16px;
+  width: 1120px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.0175em;
+  text-align: center;
+  color: #000000a9;
+}
+.about-who {
+  display: grid;
+  padding: 10px 150px;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-around;
+}
+.about-who div {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+.about-who div h1 {
+  padding: 20px 0;
+  text-align: left;
+}
+.about-who p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.025em;
+  text-align: left;
+  width: 428px;
+  color: #000000a9;
+}
+@media (max-width: 850px) {
+  .about-home {
+    margin: 0;
+    padding: 0;
+  }
+  .about-home img {
+    height: 240px;
+    width: 361px;
+    padding: 20px 5px;
+  }
+  .about-home h3 {
+    color: rgba(0, 106, 245, 1);
+    font-size: 24px;
+    padding: 0;
+  }
+  .about-home h1 {
+    padding: 20px 10px;
+  }
+  .about-home p {
+    padding: 20px 9px;
+    color: #000000a9;
+    width: 349px;
+  }
+  .about-who {
+    padding: 20px 5px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .about-who img {
+    height: 348px;
+    width: 348px;
+    margin: auto;
+  }
+  .about-who h1 {
+    font-size: 25px;
+    font-weight: 600;
+  }
+  .about-who p {
+    line-height: 1.5;
+    color: #000000a9;
+    width: 349px;
+  }
+}

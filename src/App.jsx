@@ -4,6 +4,9 @@ import RootComponent from "./Pages/RootComponent";
 import MainPage from "./Pages/MainPage";
 import MainForm from "./Components/FormPage/MainForm";
 import MainFormReferral from "./Components/FormPageReferral/MainFormReferral";
+import About from "./Pages/About";
+import PrivacyPolicy from "./Components/FooterRedesign/PrivacyPolicy";
+import TermsCondition from "./Components/FooterRedesign/TermsCondition";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +28,18 @@ const router = createBrowserRouter([
       {
         path: "/referralform",
         element: <MainFormReferral />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "privacypolicy",
+        element: <PrivacyPolicy />,
+      },
+      {
+        path: "termsandcondition",
+        element: <TermsCondition />,
       },
     ],
   },
