@@ -109,6 +109,7 @@ const FormMentor = () => {
       }
 
       if (result.status === "success") {
+        sendMessage();
         setFormSubmitted(true);
         setFormData({
           Name: "",
@@ -131,7 +132,51 @@ const FormMentor = () => {
       alert("Failed to submit the form.");
     }
   };
+  const sendMessage = async () => {
+    const myHeaders = new Headers();
+myHeaders.append("OWNCHAT-API-KEY", "MpKSQ0OAIn5JFTessxh1G-pS453lAjpmIa2sAlFb");
+myHeaders.append("OWNCHAT-API-SECRET", "oGrQf7bdsoU0CTRWcALSi49E46fnA8YQQpcFWWt3");
+myHeaders.append("Content-Type", "application/json");
 
+const raw = JSON.stringify({
+  "messaging_product": "whatsapp",
+  "preview_url": false,
+  "recipient_type": "individual",
+  "recipient_name": formData.Name,
+  "to":`91${formData.Phone}`,
+  "type": "template",
+  "template": {
+    "name": "thanks_msg_01",
+    "language": {
+      "code": "en_US"
+    },
+    "components": [
+      {
+        "type": "body",
+        "parameters": [
+          {
+            "type": "text",
+            "text": formData.Name,
+          }
+        ]
+      }
+    ]
+  }
+});
+
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  body: raw,
+  redirect: "follow"
+};
+
+fetch("https://api.ownchat.app/apis/v1/chat/send-message", requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
+  };
+  
   return (
     <div className="mentor-container" id="mentorship">
       <div className="mentor-form-section">

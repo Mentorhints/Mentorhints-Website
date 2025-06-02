@@ -26,6 +26,7 @@ const Step2 = ({ formData, handleChange, onSubmitSuccess }) => {
     e.preventDefault();
 
     try {
+      
       const response = await fetch(
         "https://test.mentorhints.com/submit_form.php",
         {
@@ -60,6 +61,7 @@ const Step2 = ({ formData, handleChange, onSubmitSuccess }) => {
 
       // Handle the result
       if (result.success) {
+        sendMessage();
         onSubmitSuccess(); // Go to Step 3
       } else {
         alert("Submission failed: " + result.message);
@@ -69,7 +71,50 @@ const Step2 = ({ formData, handleChange, onSubmitSuccess }) => {
       alert("Network error. Please try again later.");
     }
   };
+  const sendMessage = async () => {
+    const myHeaders = new Headers();
+myHeaders.append("OWNCHAT-API-KEY", "MpKSQ0OAIn5JFTessxh1G-pS453lAjpmIa2sAlFb");
+myHeaders.append("OWNCHAT-API-SECRET", "oGrQf7bdsoU0CTRWcALSi49E46fnA8YQQpcFWWt3");
+myHeaders.append("Content-Type", "application/json");
 
+const raw = JSON.stringify({
+  "messaging_product": "whatsapp",
+  "preview_url": false,
+  "recipient_type": "individual",
+  "recipient_name": formData.name,
+  "to":`91${formData.mobile}`,
+  "type": "template",
+  "template": {
+    "name": "thanks_msg_01",
+    "language": {
+      "code": "en_US"
+    },
+    "components": [
+      {
+        "type": "body",
+        "parameters": [
+          {
+            "type": "text",
+            "text": formData.name,
+          }
+        ]
+      }
+    ]
+  }
+});
+
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  body: raw,
+  redirect: "follow"
+};
+
+fetch("https://api.ownchat.app/apis/v1/chat/send-message", requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
+  };
   return (
     <form className="form-container-s2" onSubmit={handleSubmit}>
       <DropdownSelect
