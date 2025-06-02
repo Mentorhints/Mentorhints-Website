@@ -1,6 +1,6 @@
 import "../../StylesOfComponents/MentorshipDetails/Main.css";
+import AnimationButton from "../../utils/AnimatedButton/AnimationButton.jsx";
 import Sliders from "./Sliders.jsx";
-import { useState } from "react";
 
 const Main = () => {
   return (
@@ -19,9 +19,10 @@ const Main = () => {
             Unlock your potential and ace your interviews with the guidence of
             experienced mentors.
           </p>
-
-          <a href="#mentorship">
-            <button>Become a Mentor</button>
+          <a href="#mentorship" className="buttonArrange">
+            <AnimationButton name="Become a Mentor">
+              Become a Mentor
+            </AnimationButton>
           </a>
         </div>
       </section>

@@ -1,0 +1,47 @@
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.logofiles {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 30px;
+}
+
+.logosSliding {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.imagesofCompany {
+  display: inline-flex;
+  animation: slide 20s linear infinite; /* slower, smoother */
+}
+
+.logosSliding:hover .imagesofCompany {
+  animation-play-state: paused;
+}
+
+.image-sliding {
+  height: 95px;
+  padding: 30px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .logofiles {
+    font-size: 30px;
+  }
+
+  .image-sliding {
+    height: 130px;
+    padding: 40px;
+  }
+}

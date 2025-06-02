@@ -70,7 +70,7 @@ const Navbar = () => {
           />
         </a>
         {isOpen && <DropDown setIsOpen={setIsOpen} />}
-        {/* <a href="#">Become a Mentor</a> */}
+        <Link to="/becomeamentor">Become a Mentor</Link>
         {/* <a href="#">About</a> */}
         <Link to="/about">About</Link>
         <a href="https://blogs.mentorhints.com/">Blogs</a>

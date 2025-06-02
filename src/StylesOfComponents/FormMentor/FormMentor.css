@@ -1,0 +1,110 @@
+.mentor-form-section {
+  background: rgba(0, 106, 245, 0.15);
+  padding: 1rem 1.2rem;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+}
+.mentor-form-section .mentor-form {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  max-width: 450px;
+  margin: 5% 2%;
+}
+.mentor-form-section .mentor-form h2 {
+  color: rgba(0, 65, 245, 0.87);
+  font-size: 21px;
+  padding: 30px;
+}
+.mentor-form-section .mentor-form input {
+  display: block;
+  width: 85%;
+  padding: 10px;
+  background: white;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: left;
+  color: rgba(95, 95, 95, 0.712);
+  font-size: 14px;
+}
+.mentor-form-section .mentor-form .submit {
+  color: white;
+  border: none;
+  text-align: center;
+  /* margin: 30px 10px; */
+  margin: 10px 23px;
+  margin-bottom: 0px;
+  padding: 12px;
+  width: 87%;
+  border-radius: 5px;
+  text-wrap: nowrap;
+}
+.mentor-images-section {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  position: relative;
+  width: 348px;
+}
+.submitpart {
+  position: relative;
+  width: 97%;
+  margin-bottom: 20px;
+}
+.successImage {
+  position: absolute;
+  top: 43%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+.success-text {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .mentor-container {
+    background: linear-gradient(
+      82.99deg,
+      rgba(0, 106, 245, 0.37) 0.93%,
+      #fdfdff 67.64%
+    );
+    margin: 5px 0px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+  }
+  .successImage {
+    left: 25%;
+  }
+  .mentor-form-section {
+    display: flex;
+    background-color: transparent;
+  }
+
+  .mentor-form-section .mentor-form {
+    width: 400px;
+    margin-top: 0%;
+    margin-left: 100px;
+    height: fit-content;
+    margin-bottom: 0%;
+  }
+
+  .mentor-images-section {
+    display: grid;
+    grid-template-columns: repeat(2, 35%);
+    margin-left: 180px;
+    margin-top: -15px;
+    column-gap: 70px;
+    margin-bottom: -20px;
+  }
+  .person2 {
+    padding-top: 40px;
+  }
+  .person4 {
+    margin-top: 62px;
+  }
+}

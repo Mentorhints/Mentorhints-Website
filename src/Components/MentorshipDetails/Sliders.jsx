@@ -12,7 +12,7 @@ const Sliders = ({ className, BTNclassName }) => {
   const { isDesktop } = useContext(ScreenSizeContext);
   return (
     <>
-      <div className={`collection ${className ? className : ""}`}>
+      <div className={`collections ${className ? className : ""}`}>
         <div className="swiper mySwiper">
           <Swiper
             effect={"coverflow"}

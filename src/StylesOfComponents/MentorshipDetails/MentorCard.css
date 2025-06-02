@@ -1,14 +1,14 @@
-/* .mentorimage {
+.mentorimage {
   width: 129px;
   height: 125px;
   border-radius: 5px;
   border: 1px solid var(--blue-color);
-  margin: 10px auto 0px;
+  margin: 20px auto 0px;
 }
 .mentorname,
 .mentor_role {
   font-weight: 500;
-  margin: auto;
+  text-align: center;
 }
 .mentorname {
   font-size: 17px;
@@ -21,7 +21,7 @@
   padding: 3px;
 }
 .mentorcompany {
-  margin: 5px auto;
+  margin: 8px auto 0px;
 }
 
 @media (max-width: 500px) {
@@ -41,4 +41,4 @@
   .mentor_role {
     font-size: 10px;
   }
-} */
+}

@@ -13,18 +13,18 @@ import Mphasis from "../../assets/mphasis_company.svg";
 
 export const MentorsList = [
   {
+    image: Abin,
+    name: "Abinesh Ravichandar",
+    designation: "DevOps",
+    Company: Mentorhints,
+  },
+  {
     image: Arun,
     name: "Arun",
     designation: "Full Stack Developer",
     Company: mindgates,
   },
 
-  {
-    image: Abin,
-    name: "Abinesh Ravichandar",
-    designation: "DevOps",
-    Company: Mentorhints,
-  },
   {
     image: udaya,
     name: "Udaya Shree",

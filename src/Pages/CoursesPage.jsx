@@ -28,7 +28,7 @@ const Courses = () => {
       <Container price={course.price} dupprice={course.dupPrice} />
       <CourseCertificate CourseCertificate={course.certificateimg} />
       <SuccessStory />
-      <Faq />
+      <Faq faqs={course.faqs} />
     </>
   );
 };

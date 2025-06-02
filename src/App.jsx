@@ -7,6 +7,7 @@ import MainFormReferral from "./Components/FormPageReferral/MainFormReferral";
 import About from "./Pages/About";
 import PrivacyPolicy from "./Components/FooterRedesign/PrivacyPolicy";
 import TermsCondition from "./Components/FooterRedesign/TermsCondition";
+import Becomeamentor from "./Pages/Becomeamentor";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "termsandcondition",
         element: <TermsCondition />,
+      },
+      {
+        path: "becomeamentor",
+        element: <Becomeamentor />,
       },
     ],
   },

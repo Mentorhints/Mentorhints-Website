@@ -1,4 +1,4 @@
-/* .collection {
+.collections {
   margin: 20px auto;
   height: 45vh;
   max-width: 62.3% !important;
@@ -37,7 +37,7 @@
     width: 120px !important;
     height: 200px !important;
   }
-  .collection {
+  .collections {
     max-width: 100% !important;
   }
   .swiper-button-next {
@@ -54,4 +54,4 @@
   .navigatebars {
     margin-top: 52rem !important;
   }
-} */
+}
