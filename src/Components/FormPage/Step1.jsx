@@ -3,12 +3,14 @@ import "../../StylesOfComponents/FormPage/Step1.css";
 
 const Step1 = ({ onContinue, formData, handleChange }) => {
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
-  const [showSendOtp, setShowSendOtp] = useState(false);
+  // const [showSendOtp, setShowSendOtp] = useState(false);
+  const [showSendOtp, setShowSendOtp] = useState(true);
   const [message, setMessage] = useState("");
   const [messageColor, setMessageColor] = useState("red");
   const otpRefs = useRef([]);
   const [errors, setErrors] = useState({ name: "", mobile: "" });
-  const [otpVerified, setOtpVerified] = useState(false);
+  const [otpVerified, setOtpVerified] = useState(true);
+  // const [otpVerified, setOtpVerified] = useState(false);
   const [resendTimer, setResendTimer] = useState(10);
   const [showResend, setShowResend] = useState(false);
   const [canResend, setCanResend] = useState(false);
@@ -168,17 +170,17 @@ const Step1 = ({ onContinue, formData, handleChange }) => {
               }
             }}
           />
-          {showSendOtp && (
+          {/* {showSendOtp && (
             <button onClick={phoneAuth} className="send-otp-btn">
               Get OTP
             </button>
-          )}
+          )} */}
         </div>
       </div>
 
       {/* OTP Inputs */}
       <div className="form-group" style={{ top: 200 }}>
-        <label className="form-label">OTP Verification</label>
+        {/* <label className="form-label">OTP Verification</label>
         <div className="otp-container">
           {otp.map((digit, index) => (
             <input
@@ -221,7 +223,7 @@ const Step1 = ({ onContinue, formData, handleChange }) => {
           >
             {canResend ? "Resend OTP" : `Resend in ${resendTimer}s`}
           </button>
-        )}
+        )} */}
 
         {errors.name && (
           <div
@@ -264,18 +266,20 @@ const Step1 = ({ onContinue, formData, handleChange }) => {
 
       <div
         className="continue-button"
-        style={{ top: 332 }}
+        style={{ top: 232 }}
         onClick={() => {
-          if (otpVerified) onContinue();
+          // if (otpVerified) onContinue();
+          onContinue();
         }}
       >
-        <span
+        {/* <span
           className={otpVerified ? "" : "disabled"}
           style={{
             pointerEvents: otpVerified ? "auto" : "none",
             opacity: otpVerified ? 1 : 0.7,
           }}
-        >
+        > */}
+        <span className="">
           Continue
         </span>
       </div>
