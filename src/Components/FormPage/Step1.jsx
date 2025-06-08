@@ -3,18 +3,22 @@ import "../../StylesOfComponents/FormPage/Step1.css";
 
 const Step1 = ({ onContinue, formData, handleChange }) => {
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
-  // const [showSendOtp, setShowSendOtp] = useState(false);
-  const [showSendOtp, setShowSendOtp] = useState(true);
+  const [showSendOtp, setShowSendOtp] = useState(false);
+//   const [showSendOtp, setShowSendOtp] = useState(true);
   const [message, setMessage] = useState("");
   const [messageColor, setMessageColor] = useState("red");
   const otpRefs = useRef([]);
   const [errors, setErrors] = useState({ name: "", mobile: "" });
-  const [otpVerified, setOtpVerified] = useState(true);
-  // const [otpVerified, setOtpVerified] = useState(false);
+//   const [otpVerified, setOtpVerified] = useState(true);
+  const [otpVerified, setOtpVerified] = useState(false);
   const [resendTimer, setResendTimer] = useState(10);
   const [showResend, setShowResend] = useState(false);
   const [canResend, setCanResend] = useState(false);
   const [otpError, setOtpError] = useState(false);
+
+  const generateOtp = () => {
+  return Math.floor(100000 + Math.random() * 900000).toString();
+};
 
   useEffect(() => {
     let timer;
@@ -78,59 +82,97 @@ const Step1 = ({ onContinue, formData, handleChange }) => {
   };
 
   const phoneAuth = () => {
-    OTPlessSignin.initiate({
-      channel: "PHONE",
-      phone: formData.mobile,
-      countryCode: "+91",
-    })
-      .then(() => {
-        setMessage("OTP sent successfully!");
-        setMessageColor("green");
-        setShowResend(true); // Show the resend option
-        setCanResend(false); // Disable resend initially
-        setResendTimer(10);
-      })
-      .catch(() => {
-        setMessage("Failed to send OTP.");
-        setMessageColor("red");
-      });
+  const otpCode = generateOtp();
+  setOtp(["", "", "", "", "", ""]); // Reset OTP UI
+  setOtpError(false);
+  setOtpVerified(false);
+  setMessage(""); // Clear previous messages
+
+  // Save generated OTP to localStorage or state for later verification
+  localStorage.setItem("generatedOtp", otpCode);
+
+  const myHeaders = new Headers();
+  myHeaders.append("OWNCHAT-API-KEY", "MpKSQ0OAIn5JFTessxh1G-pS453lAjpmIa2sAlFb");
+  myHeaders.append("OWNCHAT-API-SECRET", "oGrQf7bdsoU0CTRWcALSi49E46fnA8YQQpcFWWt3");
+  myHeaders.append("Content-Type", "application/json");
+
+  const raw = JSON.stringify({
+    messaging_product: "whatsapp",
+    recipient_type: "individual",
+    recipient_name: "user", // you can replace this with formData.name if needed
+    to: `91${formData.mobile}`,
+    type: "template",
+    template: {
+      name: "authentication",
+      language: {
+        code: "en_US"
+      },
+      components: [
+        {
+          type: "BODY",
+          parameters: [
+            {
+              type: "text",
+              text: otpCode
+            }
+          ]
+        },
+        {
+          type: "button",
+          index: 0,
+          sub_type: "url",
+          parameters: [
+            {
+              type: "text",
+              text: otpCode
+            }
+          ]
+        }
+      ]
+    }
+  });
+
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow"
   };
+
+  fetch("https://api.ownchat.app/apis/v1/chat/send-message", requestOptions)
+    .then((response) => response.text())
+    .then(() => {
+      setMessage("OTP sent successfully via WhatsApp!");
+      setMessageColor("green");
+      setShowResend(true);
+      setCanResend(false);
+      setResendTimer(10);
+    })
+    .catch((error) => {
+      console.error(error);
+      setMessage("Failed to send OTP.");
+      setMessageColor("red");
+    });
+};
+
 
   const verifyOTP = () => {
-    const enteredOtp = otp.join("");
-    if (enteredOtp.length !== 6) {
-      return;
-    }
+  const enteredOtp = otp.join("");
+  const storedOtp = localStorage.getItem("generatedOtp");
 
-    OTPlessSignin.verify({
-      channel: "PHONE",
-      phone: formData.mobile,
-      otp: enteredOtp,
-      countryCode: "+91",
-    })
-      .then((res) => {
-        if (res?.success && res.response?.verification === "COMPLETED") {
-          setMessage("OTP verified successfully!");
-          setMessageColor("green");
-          setOtpVerified(true);
-          setOtpError(false);
-          console.log("TOKEN:", res.token); // If needed later
-          // onContinue(); // Proceed to next step
-        } else {
-          setMessage("OTP doesn’t match. Retry");
-          setMessageColor("red");
-          setOtpError(true);
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-        setOtpError(true);
-        setMessage("OTP doesn’t match. Retry");
-        setMessageColor("red");
-        setOtp(["", "", "", "", "", ""]);
-        otpRefs.current[0]?.focus();
-      });
-  };
+  if (enteredOtp === storedOtp) {
+    setMessage("OTP verified successfully!");
+    setMessageColor("green");
+    setOtpVerified(true);
+    setOtpError(false);
+  } else {
+    setMessage("OTP doesn’t match. Retry");
+    setMessageColor("red");
+    setOtpError(true);
+    setOtp(["", "", "", "", "", ""]);
+    otpRefs.current[0]?.focus();
+  }
+};
 
   return (
     <div className="form-container">
@@ -170,17 +212,17 @@ const Step1 = ({ onContinue, formData, handleChange }) => {
               }
             }}
           />
-          {/* {showSendOtp && (
+          {showSendOtp && (
             <button onClick={phoneAuth} className="send-otp-btn">
               Get OTP
             </button>
-          )} */}
+          )}
         </div>
       </div>
 
       {/* OTP Inputs */}
       <div className="form-group" style={{ top: 200 }}>
-        {/* <label className="form-label">OTP Verification</label>
+        <label className="form-label">OTP Verification</label>
         <div className="otp-container">
           {otp.map((digit, index) => (
             <input
@@ -223,7 +265,7 @@ const Step1 = ({ onContinue, formData, handleChange }) => {
           >
             {canResend ? "Resend OTP" : `Resend in ${resendTimer}s`}
           </button>
-        )} */}
+        )}
 
         {errors.name && (
           <div
@@ -266,20 +308,20 @@ const Step1 = ({ onContinue, formData, handleChange }) => {
 
       <div
         className="continue-button"
-        style={{ top: 232 }}
+        style={{ top: 332 }}
         onClick={() => {
-          // if (otpVerified) onContinue();
-          onContinue();
+           if (otpVerified) onContinue();
+        //   onContinue();
         }}
       >
-        {/* <span
+        <span
           className={otpVerified ? "" : "disabled"}
           style={{
             pointerEvents: otpVerified ? "auto" : "none",
             opacity: otpVerified ? 1 : 0.7,
           }}
-        > */}
-        <span className="">
+        >
+        {/* <span className=""> */}
           Continue
         </span>
       </div>
