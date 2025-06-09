@@ -28,7 +28,7 @@ const Step2 = ({ formData, handleChange, onSubmitSuccess }) => {
     try {
       
       const response = await fetch(
-        "https://test.mentorhints.com/submit_form.php",
+        "https://mentorhints.com/submit_form.php",
         {
           method: "POST",
           headers: {

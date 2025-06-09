@@ -3,7 +3,7 @@ import "../../StylesOfComponents/Home/Home.css"; // Import the external CSS file
 import graduation from "../../assets/GraduationCap.svg";
 import handshake from "../../assets/Handshake (1).svg";
 import shield from "../../assets/ShieldCheck (1).svg";
-import imagebox from "../../assets/Image Boxes.svg";
+import imagebox from "../../assets/ImageBoxes.svg";
 import Amazon from "../../assets/Amazon.svg";
 import Apple from "../../assets/Apple.svg";
 import Google from "../../assets/Google.svg";

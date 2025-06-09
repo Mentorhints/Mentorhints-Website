@@ -89,7 +89,7 @@ const FormMentor = () => {
 
     try {
       const response = await fetch(
-        "https://test.mentorhints.com/mentor_form.php",
+        "https://mentorhints.com/mentor_form.php",
         {
           method: "POST",
           headers: {
