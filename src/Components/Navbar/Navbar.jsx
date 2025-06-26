@@ -10,7 +10,10 @@ import { courseData } from "./SearchTermData.js";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import DropDown from "./DropDown.jsx";
+import Modal from "../Modal/Modal.jsx";
+
 const Navbar = () => {
+  const [showModal, setShowModal] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [isOpen, setIsOpen] = useState(false); // State to manage dropdown visibility
   const [searchResults, setSearchResults] = useState([]);
@@ -22,8 +25,11 @@ const Navbar = () => {
   const flattenedCourses = courseData.flatMap((group) => group.courses);
 
   const handleBookDemo = () => {
-    navigate("/form"); // Navigate to the form page when the button is clicked
+    // navigate("/form"); // Navigate to the form page when the button is clicked
+    setShowModal(true);
   };
+  const closeModal = () => setShowModal(false);
+
   const handleSearch = (e) => {
     const term = e.target.value.toLowerCase();
     setSearchTerm(term);
@@ -102,6 +108,10 @@ const Navbar = () => {
         </div>
         <button onClick={handleBookDemo}>Book a Demo</button>
       </div>
+      {showModal && (
+        <Modal onClose={closeModal}>
+        </Modal>
+      )}
     </div>
   );
 };

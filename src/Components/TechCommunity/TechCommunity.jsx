@@ -1,15 +1,21 @@
 import React from "react";
+import { useState } from "react";
 import { PrimaryButton } from "./PrimaryButton";
 import imageContainer2 from "../../assets/Star.svg";
 import imageContainer from "../../assets/Thumb up.svg";
 import image from "../../assets/Mail.svg";
 import "../../StylesOfComponents/TechCommunity/TechCommunity.css";
 import { useNavigate } from "react-router-dom";
+import Modal from "../Modal/Modal";
+
 export const TechCommunity = () => {
+  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
   const handleReferral = () => {
-    navigate("/referralform");
+    // navigate("/referralform");
+    setShowModal(true);
   };
+  const closeModal = () => setShowModal(false);
   return (
     <div className="tech-community">
       <div className="content">
@@ -69,6 +75,9 @@ export const TechCommunity = () => {
           onClick={handleReferral}
         />
       </div>
+      {showModal && (
+        <Modal onClose={closeModal}/>
+      )}
     </div>
   );
 };

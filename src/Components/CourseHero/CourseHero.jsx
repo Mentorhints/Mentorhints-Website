@@ -6,6 +6,9 @@ import { useContext } from "react";
 import { ScreenSizeContext } from "../../ScreenSizeContext.jsx";
 import { useNavigate } from "react-router-dom";
 import interncard from "../../assets/GuarenteeInterncard.svg";
+import { useState } from "react";
+import Modal from "../Modal/Modal.jsx";
+
 const CourseHero = ({
   courseName,
   courseImage,
@@ -14,14 +17,17 @@ const CourseHero = ({
 }) => {
   const { isDesktop } = useContext(ScreenSizeContext);
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
 
   const handleEnrollClick = () => {
-    navigate("/form", {
-      state: {
-        courseName,
-      },
-    });
+    // navigate("/form", {
+    //   state: {
+    //     courseName,
+    //   },
+    // });
+    setShowModal(true);
   };
+  const closeModal = () => setShowModal(false);
   const courseInfo = [
     {
       head: "Starting from",
@@ -86,6 +92,9 @@ const CourseHero = ({
           ))}
         </div>
       </div>
+      {showModal && (
+        <Modal onClose={closeModal}/>
+      )}
     </>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "../../StylesOfComponents/Home/Home.css"; // Import the external CSS file
 import graduation from "../../assets/GraduationCap.svg";
 import handshake from "../../assets/Handshake (1).svg";
@@ -11,15 +12,19 @@ import tcs from "../../assets/Tcs logo.svg";
 import swiggy from "../../assets/Swiggy logo.svg";
 import infosys from "../../assets/Mask group.svg";
 import { useNavigate } from "react-router-dom";
+import Modal from "../Modal/Modal";
 
 const Home = () => {
-  const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
+  // const navigate = useNavigate();
   const handleBookDemo = () => {
-    navigate("/form"); // Navigate to the form page when the button is clicked
+    setShowModal(true);
+    // navigate("/form"); // Navigate to the form page when the button is clicked
   };
 
+  const closeModal = () => setShowModal(false);
   const handleReferral = () => {
-    navigate("/referralform");
+    // navigate("/referralform");
   };
 
   return (
@@ -99,6 +104,9 @@ const Home = () => {
           </div>
         </div>
       </div>
+      {showModal && (
+        <Modal onClose={closeModal}/>
+      )}
     </div>
   );
 };

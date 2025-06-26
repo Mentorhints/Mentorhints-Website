@@ -3,12 +3,17 @@ import styles from "../../StylesOfComponents/CoursePlan/Container.module.css";
 import certificate from "../../assets/PlanCertificate.svg";
 import greentick from "../../assets/SlimTick.svg";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import Modal from "../Modal/Modal";
 
 export default function Container({ price, dupprice }) {
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
   const handleEnrollClick = () => {
-    navigate("/form");
+    // navigate("/form");
+    setShowModal(true);
   };
+  const closeModal = () => setShowModal(false);
   return (
     <div className="con-con">
       <div className={styles.container}>
@@ -77,8 +82,8 @@ export default function Container({ price, dupprice }) {
                 ))}
               </div>
 
-              <div className={styles.primaryButton}>
-                <span className={styles.joinNow} onClick={handleEnrollClick}>
+              <div className={styles.primaryButton} onClick={handleEnrollClick}>
+                <span className={styles.joinNow} >
                   Join Now
                 </span>
               </div>
@@ -86,6 +91,9 @@ export default function Container({ price, dupprice }) {
           </div>
         </div>
       </div>
+      {showModal && (
+        <Modal onClose={closeModal}/>
+      )}
     </div>
   );
 }
