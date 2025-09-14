@@ -174,9 +174,7 @@ mentorhints-website/
 ## 📝 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👥 Authors & Contributors
-- **Maintainers**: [Your Name]
-- **Contributors**: [List of contributors]
+
 
 ## 🐛 Issues & Support
 - **Report Issues**: Submit issues on the [GitHub Issues](https://github.com/yourusername/mentorhints-website/issues) page.
